@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignments | ETLAB Clone</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/assignments.css">
+
+</head>
+
+<body>
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside id="sidebar"></aside>
+
+    <!-- ================= Main Wrapper ================= -->
+
+    <div class="wrapper">
+
+        <!-- ================= Navbar ================= -->
+
+        <header id="navbar"></header>
+
+        <!-- ================= Content ================= -->
+
+        <main class="page-content">
+
+            <!-- Breadcrumb -->
+
+            <nav class="breadcrumb">
+
+                <span>Home</span>
+
+                <i class="fa-solid fa-angle-right"></i>
+
+                <span>Assignments</span>
+
+            </nav>
+
+            <!-- Page Header -->
+
+            <section class="page-header">
+
+                <div>
+
+                    <h1>Assignments</h1>
+
+                    <p>View, manage and submit all your assignments.</p>
+
+                </div>
+
+            </section>
+
+            <!-- ================= Filters ================= -->
+
+            <section class="filter-card">
+
+                <div class="filter-grid">
+
+                    <div class="filter-group">
+
+                        <label>Semester</label>
+
+                        <select
+                            id="semesterFilter"
+                            class="select">
+
+                            <option value="">All Semesters</option>
+                            <option>III Semester</option>
+                            <option>IV Semester</option>
+                            <option>V Semester</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <label>Subject</label>
+
+                        <select
+                            id="subjectFilter"
+                            class="select">
+
+                            <option value="">All Subjects</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <label>Status</label>
+
+                        <select
+                            id="statusFilter"
+                            class="select">
+
+                            <option value="">All Status</option>
+                            <option>Pending</option>
+                            <option>Submitted</option>
+                            <option>Graded</option>
+                            <option>Overdue</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <label>Search</label>
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="searchInput"
+                                class="input"
+                                placeholder="Search assignment...">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= Assignment Table ================= -->
+
+            <section class="table-container">
+
+                <div class="table-header">
+
+                    <h3>Assignment List</h3>
+
+                    <span
+                        id="recordCount"
+                        class="record-count">
+
+                        Showing 0 assignments
+
+                    </span>
+
+                </div>
+
+                <div class="table-responsive">
+
+                    <table
+                        id="assignmentTable"
+                        class="table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Subject</th>
+
+                                <th>Semester</th>
+
+                                <th>Assignment</th>
+
+                                <th>Faculty</th>
+
+                                <th>Issued On</th>
+
+                                <th>Due Date</th>
+
+                                <th>Status</th>
+
+                                <th>Remaining</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="assignmentTableBody">
+
+                            <!-- JavaScript renders here -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+                <!-- Empty State -->
+
+                <div id="emptyState" class="empty-state hidden">
+
+                    <i class="fa-regular fa-folder-open"></i>
+
+                    <h3>No Assignments Found</h3>
+
+                    <p>
+                        Try changing the search keyword or filters.
+                    </p>
+
+                </div>
+
+                <!-- Pagination -->
+
+                <div class="pagination">
+
+                    <span
+                        id="recordInfo"
+                        class="pagination-info">
+
+                        Showing 0 of 0
+
+                    </span>
+
+                    <div
+                        id="pageNumbers"
+                        class="pagination-buttons">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- Assignment Details Modal -->
+    <!-- ====================================================== -->
+
+    <div
+        id="detailsModal"
+        class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Assignment Details</h2>
+
+                <button
+                    class="close-btn"
+                    data-close="detailsModal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <div
+                id="assignmentDetails"
+                class="modal-body">
+
+                <!-- JavaScript renders assignment details -->
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-secondary"
+                    data-close="detailsModal">
+
+                    Close
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- Submit Assignment Modal -->
+    <!-- ====================================================== -->
+
+    <div
+        id="submitModal"
+        class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Submit Assignment</h2>
+
+                <button
+                    class="close-btn"
+                    data-close="submitModal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <form id="uploadForm">
+
+                    <div class="form-group">
+
+                        <label for="assignmentFile">
+
+                            Upload Assignment
+
+                        </label>
+
+                        <input
+                            type="file"
+                            id="assignmentFile"
+                            accept=".pdf,.doc,.docx,.zip">
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            id="progressBar"
+                            class="progress-bar">
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-secondary"
+                    data-close="submitModal">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    id="submitAssignmentBtn"
+                    class="btn btn-primary">
+
+                    Submit Assignment
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Toast Container -->
+
+    <div id="toastContainer"></div>
+
+    <!-- JavaScript -->
+
+    <script src="js/assignments.js"></script>
+
+</body>
+
+</html>

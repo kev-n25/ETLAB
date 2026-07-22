@@ -1,0 +1,193 @@
+/* ==========================================
+   ASSIGNMENTS PAGE STYLES
+========================================== */
+
+/* Page Header Actions */
+
+.page-actions{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+/* Due Date Colors */
+
+.remaining{
+    font-weight:600;
+}
+
+.remaining.active{
+    color:var(--success);
+}
+
+.remaining.warning{
+    color:var(--warning);
+}
+
+.remaining.overdue{
+    color:var(--danger);
+}
+
+/* Assignment Title */
+
+.assignment-title{
+    font-weight:600;
+    color:var(--gray-900);
+}
+
+.assignment-title small{
+    display:block;
+    margin-top:4px;
+    color:var(--gray-500);
+    font-size:.8rem;
+    font-weight:400;
+}
+
+/* Faculty Name */
+
+.faculty-name{
+    color:var(--gray-700);
+}
+
+/* Description Box (Modal) */
+
+.assignment-description{
+    margin-top:20px;
+    padding:18px;
+    background:var(--gray-100);
+    border-radius:var(--radius);
+    line-height:1.7;
+    color:var(--gray-700);
+}
+
+/* Attachment Box */
+
+.attachment-box{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+
+    margin-top:20px;
+
+    padding:15px 18px;
+
+    border:var(--border);
+
+    border-radius:var(--radius);
+}
+
+.attachment-box i{
+    color:var(--primary);
+    font-size:1.2rem;
+}
+
+/* Submission Form */
+
+.submit-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+/* Upload Area */
+
+.upload-area{
+    border:2px dashed var(--gray-300);
+    border-radius:var(--radius);
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+}
+
+.upload-area:hover{
+    border-color:var(--primary);
+    background:#f8fbff;
+}
+
+.upload-area i{
+    font-size:2.4rem;
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.upload-area p{
+    color:var(--gray-500);
+    font-size:.9rem;
+}
+
+/* Hide File Input */
+
+.upload-area input{
+    display:none;
+}
+
+/* Status Colors */
+
+.status-submitted{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.status-pending{
+    background:#fef3c7;
+    color:#92400e;
+}
+
+.status-overdue{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.status-graded{
+    background:#dbeafe;
+    color:#1e40af;
+}
+
+/* Table Row Animation */
+
+.assignment-row{
+    animation:fadeAssignment .35s ease;
+}
+
+@keyframes fadeAssignment{
+
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .attachment-box{
+
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .page-actions{
+
+        width:100%;
+    }
+
+    .page-actions .btn{
+
+        width:100%;
+    }
+
+}

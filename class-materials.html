@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Materials | ETLAB Clone</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/class-materials.css">
+</head>
+
+<body>
+
+<aside id="sidebar"></aside>
+
+<div class="wrapper">
+
+<header id="navbar"></header>
+
+<main class="page-content">
+
+<nav class="breadcrumb">
+<span>Home</span>
+<i class="fa-solid fa-angle-right"></i>
+<span>Class Materials</span>
+</nav>
+
+<section class="page-header">
+<div>
+<h1>Class Materials</h1>
+<p>Access lecture notes, presentations, PDFs and study resources.</p>
+</div>
+</section>
+
+<section class="filter-card">
+<div class="filter-grid">
+
+<div class="filter-group">
+<label>Semester</label>
+<select id="semesterFilter" class="select">
+<option value="">All Semesters</option>
+<option>III Semester</option>
+<option>IV Semester</option>
+<option>V Semester</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label>Subject</label>
+<select id="subjectFilter" class="select">
+<option value="">All Subjects</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label>Material Type</label>
+<select id="typeFilter" class="select">
+<option value="">All Types</option>
+<option>PDF</option>
+<option>PPT</option>
+<option>DOC</option>
+<option>Video</option>
+<option>Link</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label>Search</label>
+<div class="search-box">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input id="searchInput" class="input" type="text" placeholder="Search material...">
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="table-container">
+
+<div class="table-header">
+<h3>Study Materials</h3>
+<span id="recordCount" class="record-count">Showing 0 study materials</span>
+</div>
+
+<div class="table-responsive">
+<table id="materialsTable" class="table">
+
+<thead>
+<tr>
+<th>Subject</th>
+<th>Semester</th>
+<th>Module</th>
+<th>Title</th>
+<th>Details</th>
+<th>Type</th>
+<th>Added On</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="materialsTableBody">
+<!-- JavaScript renders here -->
+</tbody>
+
+</table>
+</div>
+
+<div id="emptyState" class="empty-state hidden">
+<i class="fa-solid fa-book-open"></i>
+<h3>No Study Materials Found</h3>
+<p>Try changing the filters or search keyword.</p>
+</div>
+
+<div class="pagination">
+<span id="recordInfo" class="pagination-info">Showing 0 of 0</span>
+<div id="pageNumbers" class="pagination-buttons"></div>
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<div id="previewModal" class="modal">
+
+<div class="modal-content large">
+
+<div class="modal-header">
+<h2>Study Material Preview</h2>
+<button class="close-btn" data-close="previewModal">
+<i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+
+<div id="previewContent" class="modal-body">
+<!-- Preview rendered by JavaScript -->
+</div>
+
+<div class="modal-footer">
+<button class="btn btn-secondary" data-close="previewModal">Close</button>
+</div>
+
+</div>
+
+</div>
+
+<div id="detailsModal" class="modal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+<h2>Material Details</h2>
+<button class="close-btn" data-close="detailsModal">
+<i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+
+<div id="materialDetails" class="modal-body">
+<!-- JavaScript renders details -->
+</div>
+
+<div class="modal-footer">
+<button class="btn btn-secondary" data-close="detailsModal">Close</button>
+</div>
+
+</div>
+
+</div>
+
+<div id="toastContainer"></div>
+
+<script src="js/class-materials.js"></script>
+
+</body>
+</html>

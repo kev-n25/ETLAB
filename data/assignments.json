@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "subject": "Data Structures",
+    "semester": "S3",
+    "title": "Linked List Implementation",
+    "faculty": "Dr. Anil Kumar",
+    "issuedOn": "2026-07-01",
+    "dueDate": "2026-07-15",
+    "status": "Pending",
+    "attachment": "linked_list.pdf",
+    "description": "Implement Singly, Doubly and Circular Linked Lists with menu-driven operations."
+  },
+  {
+    "id": 2,
+    "subject": "Database Management Systems",
+    "semester": "S3",
+    "title": "Normalization Assignment",
+    "faculty": "Dr. Priya Nair",
+    "issuedOn": "2026-07-04",
+    "dueDate": "2026-07-18",
+    "status": "Submitted",
+    "attachment": "normalization.pdf",
+    "description": "Normalize the given database up to BCNF and explain each step."
+  },
+  {
+    "id": 3,
+    "subject": "Operating Systems",
+    "semester": "S3",
+    "title": "CPU Scheduling Algorithms",
+    "faculty": "Prof. Rahul Menon",
+    "issuedOn": "2026-07-02",
+    "dueDate": "2026-07-20",
+    "status": "Graded",
+    "attachment": "cpu_scheduling.pdf",
+    "description": "Implement FCFS, SJF and Round Robin scheduling algorithms."
+  },
+  {
+    "id": 4,
+    "subject": "Computer Networks",
+    "semester": "S3",
+    "title": "Socket Programming",
+    "faculty": "Dr. Deepa Joseph",
+    "issuedOn": "2026-07-05",
+    "dueDate": "2026-07-22",
+    "status": "Pending",
+    "attachment": "socket_programming.pdf",
+    "description": "Develop TCP client-server communication using sockets."
+  },
+  {
+    "id": 5,
+    "subject": "Java Programming",
+    "semester": "S3",
+    "title": "Swing GUI Project",
+    "faculty": "Prof. Akhil Das",
+    "issuedOn": "2026-07-08",
+    "dueDate": "2026-07-24",
+    "status": "Overdue",
+    "attachment": "java_gui.pdf",
+    "description": "Develop a Student Management GUI using Java Swing."
+  }
+]
