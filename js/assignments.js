@@ -278,6 +278,7 @@ const progressBar = document.getElementById("progressBar");
 const submitAssignmentBtn = document.getElementById("submitAssignmentBtn");
 
 const toastContainer = document.getElementById("toastContainer");
+let selectedAssignmentId = null;
 
 // ==========================================
 // Attach Button Events
@@ -323,18 +324,20 @@ function attachButtonEvents() {
 
     document.querySelectorAll(".submit-btn").forEach(button => {
 
-        button.onclick = () => {
+    button.onclick = () => {
 
-            uploadForm.reset();
+        selectedAssignmentId = Number(button.dataset.id);
 
-            if (progressBar)
-                progressBar.style.width = "0%";
+        uploadForm.reset();
 
-            submitModal.style.display = "flex";
+        if (progressBar)
+            progressBar.style.width = "0%";
 
-        };
+        submitModal.style.display = "flex";
 
-    });
+    };
+
+});
 
 }
 
@@ -374,6 +377,21 @@ if (submitAssignmentBtn) {
 
     submitAssignmentBtn.onclick = () => {
 
+        // Find selected assignment
+        const assignment = assignments.find(
+            item => item.id === selectedAssignmentId
+        );
+
+        // Only Pending assignments can be submitted
+        if (!assignment || assignment.status !== "Pending") {
+
+            showToast("This assignment cannot be submitted now.");
+
+            return;
+
+        }
+
+        // Check if a file was selected
         if (!assignmentFile.files.length) {
 
             showToast("Please choose a file.");
@@ -390,19 +408,31 @@ if (submitAssignmentBtn) {
 
             progress += 10;
 
-            progressBar.style.width = progress + "%";
+            progressBar.style.width =
+                progress + "%";
 
             if (progress >= 100) {
 
                 clearInterval(interval);
 
+                // Change Pending → Submitted
+                assignment.status = "Submitted";
+
+                // Close modal
                 submitModal.style.display = "none";
 
+                // Reset form
                 uploadForm.reset();
 
                 progressBar.style.width = "0%";
 
-                showToast("Assignment submitted successfully!");
+                // Refresh table
+                applyFilters();
+
+                // Success message
+                showToast(
+                    "Assignment submitted successfully!"
+                );
 
             }
 
