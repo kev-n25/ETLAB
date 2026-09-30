@@ -2,6 +2,7 @@
 // ETLAB Clone - Assignments
 // Part 1 : Setup & Data Loading
 // ==========================================
+const STUDENT_ID = "6abcb10dab945a702dde2676";
 
 // ---------- DOM Elements ----------
 
@@ -30,25 +31,50 @@ const ITEMS_PER_PAGE = 5;
 // ==========================================
 
 async function loadAssignments() {
-
     try {
+        const res = await fetch("http://localhost:5000/api/assignments");
 
-        const response = await fetch("data/assignments.json");
+        console.log("API response:", res);
 
-        assignments = await response.json();
+        assignments = await res.json();
 
-        filteredAssignments = [...assignments];
+        console.log("Assignments:", assignments);
+
+        const submissionResponse = await fetch(
+    "http://localhost:5000/api/submissions"
+);
+
+const submissions = await submissionResponse.json();
+
+assignments = assignments.map(assignment => {
+
+    const submitted = submissions.some(submission => {
+
+        const assignmentId =
+            typeof submission.assignment === "object"
+                ? submission.assignment._id
+                : submission.assignment;
+
+        return (
+            assignmentId === assignment.id &&
+            submission.student === STUDENT_ID
+        );
+
+    });
+
+    return {
+        ...assignment,
+        status: submitted ? "Submitted" : "Pending"
+    };
+
+});
 
         populateSubjectFilter();
-
         applyFilters();
 
-    } catch (error) {
-
-        console.error("Unable to load assignments:", error);
-
+    } catch (err) {
+        console.error("Error loading assignments:", err);
     }
-
 }
 
 // ==========================================
@@ -96,36 +122,38 @@ function getRemainingDays(date) {
 // ==========================================
 // Filters
 // ==========================================
-
 function applyFilters() {
 
     const semester = semesterFilter.value;
     const subject = subjectFilter.value;
     const status = statusFilter.value;
-    const keyword = searchInput.value.trim().toLowerCase();
+    const keyword = searchInput.value.toLowerCase();
 
     filteredAssignments = assignments.filter(item => {
 
-        return (
+        const semesterMatch =
+            !semester || item.semester === semester;
 
-            (!semester || item.semester === semester) &&
-            (!subject || item.subject === subject) &&
-            (!status || item.status === status) &&
+        const subjectMatch =
+            !subject || item.subject === subject;
 
-            (
-                item.title.toLowerCase().includes(keyword) ||
-                item.subject.toLowerCase().includes(keyword) ||
-                item.faculty.toLowerCase().includes(keyword)
-            )
+        const statusMatch =
+            !status || (item.status || "Pending") === status;
 
-        );
+        const searchMatch =
+            (item.title || "").toLowerCase().includes(keyword) ||
+            (item.subject || "").toLowerCase().includes(keyword) ||
+            (item.faculty || "").toLowerCase().includes(keyword);
 
+        return semesterMatch &&
+               subjectMatch &&
+               statusMatch &&
+               searchMatch;
     });
 
     currentPage = 1;
 
     renderAssignments();
-
 }
 
 // ==========================================
@@ -179,10 +207,10 @@ function renderAssignments() {
             <td>${item.dueDate}</td>
 
             <td>
-                <span class="status-badge ${item.status.toLowerCase()}">
-                    ${item.status}
-                </span>
-            </td>
+    <span class="status-badge ${(item.status || "Pending").toLowerCase()}">
+        ${item.status || "Pending"}
+    </span>
+</td>
 
             <td>${getRemainingDays(item.dueDate)}</td>
 
@@ -195,10 +223,11 @@ function renderAssignments() {
                 </button>
 
                 <button
-                    class="btn btn-secondary submit-btn"
-                    data-id="${item.id}">
-                    Submit
-                </button>
+    class="btn btn-secondary submit-btn"
+    data-id="${item.id}"
+    ${item.status === "Submitted" ? "disabled" : ""}>
+    ${item.status === "Submitted" ? "Submitted" : "Submit"}
+</button>
 
             </td>
         `;
@@ -290,9 +319,10 @@ function attachButtonEvents() {
 
         button.onclick = () => {
 
-            const id = Number(button.dataset.id);
+            const id = button.dataset.id;
 
-            const assignment = assignments.find(item => item.id === id);
+            const assignment =
+                assignments.find(item => item.id === id);
 
             if (!assignment) return;
 
@@ -304,7 +334,7 @@ function attachButtonEvents() {
                 <p><strong>Faculty:</strong> ${assignment.faculty}</p>
                 <p><strong>Issued On:</strong> ${assignment.issuedOn}</p>
                 <p><strong>Due Date:</strong> ${assignment.dueDate}</p>
-                <p><strong>Status:</strong> ${assignment.status}</p>
+                <p><strong>Status:</strong> ${assignment.status || "Pending"}</p>
 
                 <hr>
 
@@ -313,7 +343,7 @@ function attachButtonEvents() {
                 <br>
 
                 <strong>Attachment:</strong>
-                <p>${assignment.attachment}</p>
+                <p>${assignment.attachment || "No attachment available"}</p>
             `;
 
             detailsModal.style.display = "flex";
@@ -322,22 +352,23 @@ function attachButtonEvents() {
 
     });
 
+
     document.querySelectorAll(".submit-btn").forEach(button => {
 
-    button.onclick = () => {
+        button.onclick = () => {
 
-        selectedAssignmentId = Number(button.dataset.id);
+            selectedAssignmentId = button.dataset.id;
 
-        uploadForm.reset();
+            uploadForm.reset();
 
-        if (progressBar)
-            progressBar.style.width = "0%";
+            if (progressBar)
+                progressBar.style.width = "0%";
 
-        submitModal.style.display = "flex";
+            submitModal.style.display = "flex";
 
-    };
+        };
 
-});
+    });
 
 }
 
@@ -375,73 +406,70 @@ window.onclick = (event) => {
 
 if (submitAssignmentBtn) {
 
-    submitAssignmentBtn.onclick = () => {
+    submitAssignmentBtn.onclick = async () => {
 
-        // Find selected assignment
         const assignment = assignments.find(
             item => item.id === selectedAssignmentId
         );
 
-        // Only Pending assignments can be submitted
-        if (!assignment || assignment.status !== "Pending") {
-
-            showToast("This assignment cannot be submitted now.");
-
+        if (!assignment) {
+            showToast("Assignment not found.");
             return;
-
         }
 
-        // Check if a file was selected
-        if (!assignmentFile.files.length) {
-
-            showToast("Please choose a file.");
-
-            return;
-
-        }
-
-        let progress = 0;
-
-        progressBar.style.width = "0%";
-
-        const interval = setInterval(() => {
-
-            progress += 10;
-
-            progressBar.style.width =
-                progress + "%";
-
-            if (progress >= 100) {
-
-                clearInterval(interval);
-
-                // Change Pending → Submitted
-                assignment.status = "Submitted";
-
-                // Close modal
-                submitModal.style.display = "none";
-
-                // Reset form
-                uploadForm.reset();
-
-                progressBar.style.width = "0%";
-
-                // Refresh table
-                applyFilters();
-
-                // Success message
-                showToast(
-                    "Assignment submitted successfully!"
-                );
-
-            }
-
-        }, 120);
-
-    };
-
+        if (assignment.status === "Submitted") {
+    showToast("This assignment has already been submitted.");
+    return;
 }
 
+        if (!assignmentFile.files.length) {
+            showToast("Please choose a file.");
+            return;
+        }
+
+        try {
+
+            const response = await fetch(
+                "http://localhost:5000/api/submissions",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        assignment: selectedAssignmentId,
+                        student: "6abcb10dab945a702dde2676"
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || "Submission failed");
+            }
+
+            submitModal.style.display = "none";
+
+            uploadForm.reset();
+
+            progressBar.style.width = "0%";
+
+            showToast("Assignment submitted successfully!");
+
+            console.log("Submission created:", data);
+
+        } catch (error) {
+
+            console.error("Submission error:", error);
+
+            showToast("Failed to submit assignment.");
+
+        }
+    };
+}
 // ==========================================
 // Toast
 // ==========================================

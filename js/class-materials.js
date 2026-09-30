@@ -35,9 +35,8 @@ async function loadMaterials() {
 
     try {
 
-        const response = await fetch("data/materials.json");
-
-        materials = await response.json();
+       const response = await fetch("http://localhost:5000/api/materials");
+ materials = await response.json();
 
         filteredMaterials = [...materials];
 
@@ -319,7 +318,7 @@ function attachButtonEvents() {
 
         button.onclick = () => {
 
-            const id = Number(button.dataset.id);
+            const id = button.dataset.id;
 
             const material =
                 materials.find(item => item.id === id);
@@ -394,15 +393,38 @@ function attachButtonEvents() {
 
     });
 
-    document.querySelectorAll(".download-btn").forEach(button => {
+  document.querySelectorAll(".download-btn").forEach(button => {
 
-        button.onclick = () => {
+    button.onclick = () => {
 
-            showToast("Downloading material...");
+        const id = button.dataset.id;
 
-        };
+        const material = materials.find(item => item.id === id);
 
-    });
+        if (!material) {
+            showToast("Material not found.");
+            return;
+        }
+
+        const downloadUrl =
+            `http://localhost:5000/uploads/${material.file}`;
+
+        const link = document.createElement("a");
+
+        link.href = downloadUrl;
+        link.download = material.file;
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        document.body.removeChild(link);
+
+        showToast("Download started.");
+
+    };
+
+});
 
 }
 
