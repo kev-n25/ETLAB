@@ -13,6 +13,10 @@
     <title>ETLAB - Attendance</title>
 
 
+    <!-- ==========================================
+         GLOBAL STYLES
+         ========================================== -->
+
     <link
         rel="stylesheet"
         href="css/style.css"
@@ -23,9 +27,24 @@
         href="css/layout.css"
     >
 
+
+    <!-- ==========================================
+         ATTENDANCE STYLES
+         ========================================== -->
+
     <link
         rel="stylesheet"
         href="css/attendance.css"
+    >
+
+
+    <!-- ==========================================
+         FONT AWESOME
+         ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
 </head>
@@ -44,19 +63,27 @@
     <aside class="sidebar">
 
 
+        <!-- Logo -->
+
         <div class="brand">
 
-            <span>◔</span>
+            <div class="brand-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
 
             <span class="brand-text">
-                etlab
+                ETLAB
             </span>
 
         </div>
 
 
-        <nav>
+        <!-- Navigation -->
 
+        <nav class="sidebar-navigation">
+
+
+            <!-- Dashboard -->
 
             <a
                 href="dashboard.html"
@@ -64,15 +91,17 @@
             >
 
                 <span class="nav-icon">
-                    ⌂
+                    <i class="fa-solid fa-gauge"></i>
                 </span>
 
-                <span>
+                <span class="nav-label">
                     Dashboard
                 </span>
 
             </a>
 
+
+            <!-- Attendance -->
 
             <a
                 href="attendance.html"
@@ -80,15 +109,17 @@
             >
 
                 <span class="nav-icon">
-                    ▦
+                    <i class="fa-solid fa-clipboard-user"></i>
                 </span>
 
-                <span>
+                <span class="nav-label">
                     Attendance
                 </span>
 
             </a>
 
+
+            <!-- Results -->
 
             <a
                 href="results.html"
@@ -96,15 +127,17 @@
             >
 
                 <span class="nav-icon">
-                    ◩
+                    <i class="fa-solid fa-square-poll-vertical"></i>
                 </span>
 
-                <span>
+                <span class="nav-label">
                     Results
                 </span>
 
             </a>
 
+
+            <!-- Timetable -->
 
             <a
                 href="timetable.html"
@@ -112,15 +145,17 @@
             >
 
                 <span class="nav-icon">
-                    ▦
+                    <i class="fa-solid fa-calendar-days"></i>
                 </span>
 
-                <span>
-                    TimeTable
+                <span class="nav-label">
+                    Timetable
                 </span>
 
             </a>
 
+
+            <!-- Assignments -->
 
             <a
                 href="assignments.html"
@@ -128,15 +163,17 @@
             >
 
                 <span class="nav-icon">
-                    ▦
+                    <i class="fa-solid fa-file-lines"></i>
                 </span>
 
-                <span>
+                <span class="nav-label">
                     Assignments
                 </span>
 
             </a>
 
+
+            <!-- Materials -->
 
             <a
                 href="class-materials.html"
@@ -144,26 +181,29 @@
             >
 
                 <span class="nav-icon">
-                    ▦
+                    <i class="fa-solid fa-book"></i>
                 </span>
 
-                <span>
+                <span class="nav-label">
                     Materials
                 </span>
 
             </a>
 
 
+            <!-- User Manual -->
+
             <a
-                href="#"
+                href="usermanual.html"
                 class="nav-item"
+                id="userManualButton"
             >
 
                 <span class="nav-icon">
-                    ▦
+                    <i class="fa-solid fa-circle-question"></i>
                 </span>
 
-                <span>
+                <span class="nav-label">
                     User Manual
                 </span>
 
@@ -190,46 +230,75 @@
         <header class="topbar">
 
 
-            <div>
+            <!-- College -->
 
-                TKM College of Engineering
+            <div class="college-title">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <span>
+                    TKM College of Engineering
+                </span>
 
             </div>
 
 
+            <!-- Top actions -->
+
             <div class="top-actions">
 
 
+                <!-- Student -->
+
                 <div class="top-action username">
 
-                    👤 KEVIN REJI ▾
+                    <i class="fa-solid fa-user"></i>
 
-                </div>
-
-
-                <div class="top-action">
-
-                    ✉ Messages
-
-                    <span class="message-count">
-                        0
+                    <span id="studentName">
+                        Student
                     </span>
 
                 </div>
 
 
+                <!-- Messages -->
+
+                <a
+                    href="#"
+                    class="top-action"
+                >
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span>
+                        Messages
+                    </span>
+
+                    <span class="message-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <!-- Logout -->
+
                 <button
                     id="logoutButton"
                     class="logout-button"
+                    type="button"
                 >
 
-                    ↪ Logout
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>
+                        Logout
+                    </span>
 
                 </button>
 
 
             </div>
-
 
         </header>
 
@@ -241,66 +310,96 @@
 
         <div class="breadcrumb">
 
-            🏠
 
-            &nbsp;
+            <a href="dashboard.html">
 
-            Home
+                <i class="fa-solid fa-house"></i>
 
-            &nbsp;
+                <span>
+                    Home
+                </span>
 
-            ›
+            </a>
 
-            &nbsp;
+
+            <span class="breadcrumb-separator">
+                /
+            </span>
+
 
             <span class="current">
                 Attendance
             </span>
+
 
         </div>
 
 
 
         <!-- ======================================
-             ATTENDANCE PANEL
+             ATTENDANCE PAGE
              ====================================== -->
 
         <main class="page-panel">
 
 
             <!-- ==================================
-                 PANEL HEADER
+                 PAGE HEADER
                  ================================== -->
 
             <div class="attendance-header">
 
 
-                <h1>
+                <div class="attendance-title">
 
-                    ▦
 
-                    &nbsp;
+                    <div class="attendance-title-icon">
 
-                    View Attendance for Vth Semester
+                        <i class="fa-solid fa-clipboard-check"></i>
 
-                </h1>
+                    </div>
 
+
+                    <div>
+
+                        <h1>
+                            View Attendance
+                        </h1>
+
+                        <p>
+                            View your daily and overall attendance record
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Header Actions -->
 
                 <div class="attendance-actions">
 
 
-                    <button>
+                    <button
+                        type="button"
+                        id="exportAttendanceButton"
+                    >
 
-                        ⬆
+                        <i class="fa-solid fa-file-export"></i>
 
                         Export Attendance
 
                     </button>
 
 
-                    <button>
+                    <button
+                        type="button"
+                        id="medicalLeaveButton"
+                    >
 
-                        ▤
+                        <i class="fa-solid fa-notes-medical"></i>
 
                         Medical Leave
 
@@ -325,27 +424,47 @@
                     href="attendance.html"
                     class="active"
                 >
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
                     Attendance
+
                 </a>
 
 
                 <a href="#">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
                     Attendance By Month
+
                 </a>
 
 
                 <a href="attendance-subject.html">
+
+                    <i class="fa-solid fa-book-open"></i>
+
                     Attendance By Subject
+
                 </a>
 
 
                 <a href="#">
-                    Attendance By Subject with dutyleave
+
+                    <i class="fa-solid fa-user-clock"></i>
+
+                    Attendance By Subject with Duty Leave
+
                 </a>
 
 
                 <a href="#">
+
+                    <i class="fa-solid fa-credit-card"></i>
+
                     Credit Based Attendance
+
                 </a>
 
 
@@ -357,135 +476,32 @@
                  STUDENT TITLE
                  ================================== -->
 
-            <h2 class="student-title">
-
-                View Attendance of KEVIN REJI
-
-            </h2>
+            <div class="student-heading">
 
 
+                <div>
 
-            <!-- ==================================
-                 FILTERS
-                 ================================== -->
+                    <span class="student-heading-label">
+                        Attendance Record
+                    </span>
 
-            <div class="attendance-filters">
+                    <h2>
+                        View Attendance of
+                        <span id="attendanceStudentName">
+                            Student
+                        </span>
+                    </h2>
 
-
-                <!-- SEMESTER -->
-
-                <select id="semesterSelect">
-
-                    <option value="5">
-                        Vth Semester
-                    </option>
-
-                    <option value="1">
-                        Ist Semester
-                    </option>
-
-                    <option value="2">
-                        IInd Semester
-                    </option>
-
-                    <option value="3">
-                        IIIrd Semester
-                    </option>
-
-                    <option value="4">
-                        IVth Semester
-                    </option>
-
-                    <option value="6">
-                        VIth Semester
-                    </option>
-
-                    <option value="7">
-                        VIIth Semester
-                    </option>
-
-                    <option value="8">
-                        VIIIth Semester
-                    </option>
-
-                </select>
+                </div>
 
 
+                <div class="student-id-display">
 
-                <!-- MONTH + YEAR -->
+                    <i class="fa-solid fa-id-card"></i>
 
-                <div class="date-selectors">
-
-
-                    <select id="monthSelect">
-
-                        <option value="1">
-                            Jan
-                        </option>
-
-                        <option value="2">
-                            Feb
-                        </option>
-
-                        <option value="3">
-                            Mar
-                        </option>
-
-                        <option value="4">
-                            Apr
-                        </option>
-
-                        <option value="5">
-                            May
-                        </option>
-
-                        <option value="6">
-                            Jun
-                        </option>
-
-                        <option value="7">
-                            Jul
-                        </option>
-
-                        <option value="8" selected>
-                            Aug
-                        </option>
-
-                        <option value="9">
-                            Sep
-                        </option>
-
-                        <option value="10">
-                            Oct
-                        </option>
-
-                        <option value="11">
-                            Nov
-                        </option>
-
-                        <option value="12">
-                            Dec
-                        </option>
-
-                    </select>
-
-
-                    <select id="yearSelect">
-
-                        <option>
-                            2026
-                        </option>
-
-                        <option>
-                            2025
-                        </option>
-
-                        <option>
-                            2024
-                        </option>
-
-                    </select>
-
+                    <span id="studentIdDisplay">
+                        --
+                    </span>
 
                 </div>
 
@@ -495,58 +511,251 @@
 
 
             <!-- ==================================
+                 FILTERS
+                 ================================== -->
+
+            <section class="attendance-filter-section">
+
+
+                <div class="filter-group">
+
+
+                    <label for="semesterSelect">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                        Semester
+
+                    </label>
+
+
+                    <select
+                        id="semesterSelect"
+                    >
+
+                        <option value="1">
+                            I Semester
+                        </option>
+
+                        <option value="2">
+                            II Semester
+                        </option>
+
+                        <option value="3">
+                            III Semester
+                        </option>
+
+                        <option value="4">
+                            IV Semester
+                        </option>
+
+                        <option
+                            value="5"
+                            selected
+                        >
+                            V Semester
+                        </option>
+
+                        <option value="6">
+                            VI Semester
+                        </option>
+
+                        <option value="7">
+                            VII Semester
+                        </option>
+
+                        <option value="8">
+                            VIII Semester
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+
+                    <label for="monthSelect">
+
+                        <i class="fa-solid fa-calendar"></i>
+
+                        Month
+
+                    </label>
+
+
+                    <select
+                        id="monthSelect"
+                    >
+
+                        <option value="1">
+                            January
+                        </option>
+
+                        <option value="2">
+                            February
+                        </option>
+
+                        <option value="3">
+                            March
+                        </option>
+
+                        <option value="4">
+                            April
+                        </option>
+
+                        <option value="5">
+                            May
+                        </option>
+
+                        <option value="6">
+                            June
+                        </option>
+
+                        <option value="7">
+                            July
+                        </option>
+
+                        <option value="8">
+                            August
+                        </option>
+
+                        <option value="9">
+                            September
+                        </option>
+
+                        <option value="10">
+                            October
+                        </option>
+
+                        <option value="11">
+                            November
+                        </option>
+
+                        <option value="12">
+                            December
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+
+                    <label for="yearSelect">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        Year
+
+                    </label>
+
+
+                    <select
+                        id="yearSelect"
+                    >
+
+                        <option value="2026">
+                            2026
+                        </option>
+
+                        <option value="2025">
+                            2025
+                        </option>
+
+                        <option value="2024">
+                            2024
+                        </option>
+
+                        <option value="2023">
+                            2023
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==================================
                  ATTENDANCE LEGEND
                  ================================== -->
 
-            <div class="attendance-legend">
+            <section class="attendance-legend-section">
 
 
-                <span class="legend present">
-                    Present
-                </span>
+                <div class="legend-title">
+
+                    <i class="fa-solid fa-palette"></i>
+
+                    Attendance Status
+
+                </div>
 
 
-                <span class="legend absent">
-                    Absent
-                </span>
+                <div class="attendance-legend">
 
 
-                <span class="legend leave">
-                    Leave
-                </span>
+                    <span class="legend present">
+                        Present
+                    </span>
 
 
-                <span class="legend na">
-                    N/A
-                </span>
+                    <span class="legend absent">
+                        Absent
+                    </span>
 
 
-                <span class="legend holiday">
-                    Holiday
-                </span>
+                    <span class="legend leave">
+                        Leave
+                    </span>
 
 
-                <span class="legend dutyleave">
-                    DutyLeave
-                </span>
+                    <span class="legend na">
+                        N/A
+                    </span>
 
 
-                <span class="legend onduty">
-                    On Duty
-                </span>
+                    <span class="legend holiday">
+                        Holiday
+                    </span>
 
 
-                <span class="legend suspension">
-                    Suspension
-                </span>
+                    <span class="legend dutyleave">
+                        Duty Leave
+                    </span>
 
 
-                <span class="legend specialleave">
-                    Special Leave
-                </span>
+                    <span class="legend onduty">
+                        On Duty
+                    </span>
 
 
-            </div>
+                    <span class="legend suspension">
+                        Suspension
+                    </span>
+
+
+                    <span class="legend specialleave">
+                        Special Leave
+                    </span>
+
+
+                </div>
+
+
+            </section>
 
 
 
@@ -554,71 +763,113 @@
                  ATTENDANCE TABLE
                  ================================== -->
 
-            <div class="attendance-table-container">
+            <section class="attendance-table-section">
 
 
-                <table
-                    id="attendanceTable"
-                    class="attendance-table"
-                >
+                <div class="table-heading">
 
 
-                    <thead>
+                    <div>
 
-                        <tr>
+                        <h3>
 
-                            <th>
-                                Date
-                            </th>
+                            <i class="fa-solid fa-table"></i>
 
-                            <th>
-                                Period 1
-                            </th>
+                            Daily Attendance
 
-                            <th>
-                                Period 2
-                            </th>
+                        </h3>
 
-                            <th>
-                                Period 3
-                            </th>
+                        <p>
+                            Attendance recorded for each academic period
+                        </p>
 
-                            <th>
-                                Period 4
-                            </th>
-
-                            <th>
-                                Period 5
-                            </th>
-
-                            <th>
-                                Period 6
-                            </th>
-
-                            <th>
-                                Period 7
-                            </th>
-
-                            <th>
-                                Period 8
-                            </th>
-
-                        </tr>
-
-                    </thead>
+                    </div>
 
 
-                    <tbody id="attendanceBody">
+                    <div class="table-scroll-hint">
 
-                        <!-- JavaScript will generate rows -->
+                        <i class="fa-solid fa-arrows-left-right"></i>
 
-                    </tbody>
+                        Scroll horizontally to view all periods
+
+                    </div>
 
 
-                </table>
+                </div>
 
 
-            </div>
+
+                <div class="attendance-table-container">
+
+
+                    <table
+                        id="attendanceTable"
+                        class="attendance-table"
+                    >
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Period 1
+                                </th>
+
+                                <th>
+                                    Period 2
+                                </th>
+
+                                <th>
+                                    Period 3
+                                </th>
+
+                                <th>
+                                    Period 4
+                                </th>
+
+                                <th>
+                                    Period 5
+                                </th>
+
+                                <th>
+                                    Period 6
+                                </th>
+
+                                <th>
+                                    Period 7
+                                </th>
+
+                                <th>
+                                    Period 8
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="attendanceBody">
+
+                            <!--
+                                attendance.js generates
+                                all attendance rows here.
+                            -->
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </section>
 
 
 
@@ -626,24 +877,54 @@
                  ATTENDANCE SUMMARY
                  ================================== -->
 
-            <div class="attendance-summary">
+            <section class="attendance-summary-section">
 
+
+                <div class="summary-heading">
+
+                    <div>
+
+                        <h3>
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            Attendance Summary
+
+                        </h3>
+
+                        <p>
+                            Your attendance percentage
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Monthly -->
 
                 <div class="summary-row">
 
 
-                    <span class="summary-label">
+                    <div class="summary-label">
 
-                        % For the month
+                        <i class="fa-solid fa-calendar-day"></i>
 
-                    </span>
+                        <span>
+                            % For the month
+                        </span>
+
+                    </div>
 
 
                     <div class="progress-container">
 
+
                         <div
                             id="monthlyProgress"
                             class="progress-bar"
+                            style="width: 0%;"
                         >
 
                             <span id="monthlyPercentage">
@@ -652,35 +933,45 @@
 
                         </div>
 
+
                     </div>
 
 
                 </div>
 
 
+
+                <!-- Overall -->
 
                 <div class="summary-row">
 
 
-                    <span class="summary-label">
+                    <div class="summary-label">
 
-                        % Till August
+                        <i class="fa-solid fa-chart-pie"></i>
 
-                    </span>
+                        <span>
+                            % Till Date
+                        </span>
+
+                    </div>
 
 
                     <div class="progress-container">
 
+
                         <div
                             id="overallProgress"
-                            class="progress-bar"
+                            class="progress-bar overall-progress"
+                            style="width: 0%;"
                         >
 
                             <span id="overallPercentage">
-                                95%
+                                0%
                             </span>
 
                         </div>
+
 
                     </div>
 
@@ -688,7 +979,7 @@
                 </div>
 
 
-            </div>
+            </section>
 
 
         </main>
@@ -701,7 +992,194 @@
 
 
 
+<!-- ==========================================
+     USER MANUAL MODAL
+     ========================================== -->
+
+<div
+    id="attendanceInfoModal"
+    class="attendance-modal"
+    aria-hidden="true"
+>
+
+
+    <div class="attendance-modal-content">
+
+
+        <button
+            type="button"
+            class="attendance-modal-close"
+            id="attendanceModalClose"
+            aria-label="Close"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="attendance-modal-icon">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+        </div>
+
+
+        <h2>
+            Attendance
+        </h2>
+
+
+        <p>
+            Attendance data is loaded from the ETLAB backend
+            for the currently logged-in student.
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     USER INFORMATION
+     ========================================== -->
+
+<script>
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+            const studentName =
+                localStorage.getItem(
+                    "studentName"
+                ) ||
+                localStorage.getItem(
+                    "username"
+                ) ||
+                "Student";
+
+
+            const studentId =
+                localStorage.getItem(
+                    "studentId"
+                ) ||
+                "--";
+
+
+            const studentNameElement =
+                document.getElementById(
+                    "studentName"
+                );
+
+
+            const attendanceStudentName =
+                document.getElementById(
+                    "attendanceStudentName"
+                );
+
+
+            const studentIdDisplay =
+                document.getElementById(
+                    "studentIdDisplay"
+                );
+
+
+            if (studentNameElement) {
+
+                studentNameElement.textContent =
+                    studentName;
+
+            }
+
+
+            if (attendanceStudentName) {
+
+                attendanceStudentName.textContent =
+                    studentName;
+
+            }
+
+
+            if (studentIdDisplay) {
+
+                studentIdDisplay.textContent =
+                    studentId;
+
+            }
+
+
+            if (
+                modalClose &&
+                modal
+            ) {
+
+                modalClose.addEventListener(
+                    "click",
+                    function () {
+
+                        modal.style.display =
+                            "none";
+
+                        modal.setAttribute(
+                            "aria-hidden",
+                            "true"
+                        );
+
+                    }
+                );
+
+            }
+
+
+            if (modal) {
+
+                modal.addEventListener(
+                    "click",
+                    function (event) {
+
+                        if (
+                            event.target ===
+                            modal
+                        ) {
+
+                            modal.style.display =
+                                "none";
+
+                            modal.setAttribute(
+                                "aria-hidden",
+                                "true"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+
+        }
+    );
+
+</script>
+
+
+
+<!-- ==========================================
+     COMMON JAVASCRIPT
+     ========================================== -->
+
 <script src="js/common.js"></script>
+
+
+<!-- ==========================================
+     ATTENDANCE JAVASCRIPT
+     IMPORTANT:
+     Keep this AFTER the HTML elements above.
+     ========================================== -->
 
 <script src="js/attendance.js"></script>
 
