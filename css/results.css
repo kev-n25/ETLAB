@@ -1,0 +1,231 @@
+/* ==========================================================
+   RESULTS PAGE
+========================================================== */
+
+/* Breadcrumb */
+
+.breadcrumb{
+
+    font-size:13px;
+
+    color:#6B7280;
+
+    margin-bottom:18px;
+
+}
+
+/* Main Card */
+
+.results-card{
+
+    background:#FFFFFF;
+
+    border:1px solid #DDDDDD;
+
+    border-radius:4px;
+
+    box-shadow:0 1px 3px rgba(0,0,0,.08);
+
+    padding:20px;
+
+}
+
+/* Header */
+
+.results-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.results-header h1{
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.results-header select{
+
+    width:220px;
+
+    height:36px;
+
+    border:1px solid #D5D5D5;
+
+    border-radius:4px;
+
+    padding:0 12px;
+
+    background:white;
+
+}
+
+/* Semester Row */
+
+.semester-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+}
+
+.semester-row label{
+
+    font-size:14px;
+
+    font-weight:500;
+
+    color:#374151;
+
+}
+
+.semester-row select{
+
+    width:220px;
+
+    height:40px;
+
+    border:1px solid var(--border);
+
+    border-radius:6px;
+
+    padding:0 12px;
+
+    background:#FFFFFF;
+
+    font-size:14px;
+
+}
+
+/* Tabs */
+
+.result-tabs{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:20px 0;
+
+}
+
+.result-tabs button{
+
+    height:34px;
+
+    padding:0 14px;
+
+    border:1px solid #D8D8D8;
+
+    background:#FFFFFF;
+
+    border-radius:4px;
+
+    font-size:14px;
+
+    transition:.2s;
+
+}
+
+.result-tabs button:hover{
+
+    background:#F5F5F5;
+
+}
+
+.result-tabs button.active{
+
+    background:#2E64FE;
+
+    color:white;
+
+    border-color:#2E64FE;
+
+}
+
+/* Table Container */
+
+.table-container{
+
+    margin-top:15px;
+
+    overflow-x:auto;
+
+}
+
+.table-container table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.table-container th{
+
+    background:#F3F4F6;
+
+    padding:12px;
+
+    text-align:left;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#444;
+
+    border-bottom:1px solid #D8D8D8;
+
+}
+
+.table-container td{
+
+    padding:11px 12px;
+
+    font-size:13px;
+
+    border-bottom:1px solid #ECECEC;
+
+}
+
+.table-container tbody tr:hover{
+
+    background:#FAFAFA;
+
+}
+
+.table-container tbody tr:nth-child(even){
+
+    background:#FCFCFC;
+
+}
+
+/* Empty State */
+
+.table-container td[colspan]{
+
+    text-align:center;
+
+    color:#6B7280;
+
+    padding:40px 20px;
+
+    font-style:italic;
+
+}

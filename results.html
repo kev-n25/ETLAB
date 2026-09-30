@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Results | ETLAB Clone</title>
+
+    <link rel="icon" href="assets/logo/logo.png" type="image/png">
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/navbar.css">
+
+    <link rel="stylesheet"
+          href="css/sidebar.css">
+
+    <link rel="stylesheet"
+          href="css/results.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- ===================== HEADER ===================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-left">
+
+            <img src="assets/logo/logo.png"
+                 alt="ETLAB Logo"
+                 class="navbar-logo">
+
+            <div class="college-details">
+
+                <h2>ETLAB</h2>
+
+                <span>TKM College of Engineering</span>
+
+            </div>
+
+        </div>
+
+        <div class="navbar-right">
+
+            <button>
+
+                <i class="fa-regular fa-envelope"></i>
+
+            </button>
+
+            <button>
+
+                <i class="fa-regular fa-bell"></i>
+
+            </button>
+
+            <button>
+
+                <i class="fa-solid fa-user"></i>
+
+            </button>
+
+            <button>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ===================== LAYOUT ===================== -->
+
+    <div class="layout">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <ul>
+
+                <li>
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <span>Attendance</span>
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-book"></i>
+
+                    <span>Assignments</span>
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-folder-open"></i>
+
+                    <span>Class Materials</span>
+
+                </li>
+
+                <li class="active">
+
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+
+                    <span>Results</span>
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span>Timetable</span>
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Profile</span>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- ================= CONTENT ================= -->
+
+        <main class="main-content">
+
+            <div class="breadcrumb">
+               
+                    <i class="fas fa-home"></i>
+                    Home
+               
+                <span class="breadcrumb-separator">></span>
+                <span class="breadcrumb-current">Results</span>
+            </div>
+
+            <section class="results-card">
+
+                <div class="results-header">
+
+                    <h1>Results</h1>
+
+                    <select id="semester">
+
+                        <option>Semester 1</option>
+                        <option>Semester 2</option>
+                        <option>Semester 3</option>
+                        <option>Semester 4</option>
+                        <option selected>Semester 5</option>
+                        <option>Semester 6</option>
+                        <option>Semester 7</option>
+                        <option>Semester 8</option>
+
+                    </select>
+
+                </div>
+
+                <div class="result-tabs">
+
+                    <button class="active">Sessional Exams</button>
+
+                    <button>Module Test</button>
+
+                    <button>Class Projects</button>
+
+                    <button>Assignments</button>
+
+                    <button>Tutorials</button>
+
+                    <button>Seminars</button>
+
+                    <button>Internal Marks</button>
+
+                    <button>Lab Evaluation</button>
+
+                    <button>Lab Internal Test</button>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Subject</th>
+
+                                <th>Semester</th>
+
+                                <th>Date</th>
+
+                                <th>Marks</th>
+
+                                <th>Total</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="resultsBody">
+
+                            <tr>
+
+                                <td colspan="5">
+
+                                    No published results yet.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/results.js"></script>
+
+</body>
+
+</html>
