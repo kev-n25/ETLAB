@@ -1,0 +1,72 @@
+/* ==========================================
+   ETLAB CLONE - GLOBAL CSS
+   ========================================== */
+
+:root {
+    --header-dark: #292929;
+    --header-light: #3a3a3a;
+
+    --sidebar: #3f3f3f;
+    --sidebar-hover: #4a4a4a;
+    --sidebar-active: #333333;
+
+    --background: #eeeeee;
+    --white: #ffffff;
+
+    --border: #cccccc;
+
+    --text: #333333;
+    --muted: #777777;
+
+    --link: #0088cc;
+
+    --present: #43e0a5;
+    --absent: #ff0000;
+    --leave: #ffff00;
+    --na: #999999;
+    --holiday: #ffffff;
+    --dutyleave: #7064d8;
+    --onduty: #df72bd;
+    --suspension: #f0a000;
+    --specialleave: #e5aaaa;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: var(--text);
+
+    background: var(--background);
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
