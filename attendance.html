@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ETLAB - Attendance</title>
+
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/attendance.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- ==========================================
+         SIDEBAR
+         ========================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="brand">
+
+            <span>◔</span>
+
+            <span class="brand-text">
+                etlab
+            </span>
+
+        </div>
+
+
+        <nav>
+
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="attendance.html"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">
+                    ▦
+                </span>
+
+                <span>
+                    Attendance
+                </span>
+
+            </a>
+
+
+            <a
+                href="results.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ◩
+                </span>
+
+                <span>
+                    Results
+                </span>
+
+            </a>
+
+
+            <a
+                href="timetable.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ▦
+                </span>
+
+                <span>
+                    TimeTable
+                </span>
+
+            </a>
+
+
+            <a
+                href="assignments.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ▦
+                </span>
+
+                <span>
+                    Assignments
+                </span>
+
+            </a>
+
+
+            <a
+                href="class-materials.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ▦
+                </span>
+
+                <span>
+                    Materials
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ▦
+                </span>
+
+                <span>
+                    User Manual
+                </span>
+
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+
+    <div class="content">
+
+
+        <!-- ======================================
+             TOP BAR
+             ====================================== -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                TKM College of Engineering
+
+            </div>
+
+
+            <div class="top-actions">
+
+
+                <div class="top-action username">
+
+                    👤 KEVIN REJI ▾
+
+                </div>
+
+
+                <div class="top-action">
+
+                    ✉ Messages
+
+                    <span class="message-count">
+                        0
+                    </span>
+
+                </div>
+
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                >
+
+                    ↪ Logout
+
+                </button>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- ======================================
+             BREADCRUMB
+             ====================================== -->
+
+        <div class="breadcrumb">
+
+            🏠
+
+            &nbsp;
+
+            Home
+
+            &nbsp;
+
+            ›
+
+            &nbsp;
+
+            <span class="current">
+                Attendance
+            </span>
+
+        </div>
+
+
+
+        <!-- ======================================
+             ATTENDANCE PANEL
+             ====================================== -->
+
+        <main class="page-panel">
+
+
+            <!-- ==================================
+                 PANEL HEADER
+                 ================================== -->
+
+            <div class="attendance-header">
+
+
+                <h1>
+
+                    ▦
+
+                    &nbsp;
+
+                    View Attendance for Vth Semester
+
+                </h1>
+
+
+                <div class="attendance-actions">
+
+
+                    <button>
+
+                        ⬆
+
+                        Export Attendance
+
+                    </button>
+
+
+                    <button>
+
+                        ▤
+
+                        Medical Leave
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 ATTENDANCE TABS
+                 ================================== -->
+
+            <div class="attendance-tabs">
+
+
+                <a
+                    href="attendance.html"
+                    class="active"
+                >
+                    Attendance
+                </a>
+
+
+                <a href="#">
+                    Attendance By Month
+                </a>
+
+
+                <a href="attendance-subject.html">
+                    Attendance By Subject
+                </a>
+
+
+                <a href="#">
+                    Attendance By Subject with dutyleave
+                </a>
+
+
+                <a href="#">
+                    Credit Based Attendance
+                </a>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 STUDENT TITLE
+                 ================================== -->
+
+            <h2 class="student-title">
+
+                View Attendance of KEVIN REJI
+
+            </h2>
+
+
+
+            <!-- ==================================
+                 FILTERS
+                 ================================== -->
+
+            <div class="attendance-filters">
+
+
+                <!-- SEMESTER -->
+
+                <select id="semesterSelect">
+
+                    <option value="5">
+                        Vth Semester
+                    </option>
+
+                    <option value="1">
+                        Ist Semester
+                    </option>
+
+                    <option value="2">
+                        IInd Semester
+                    </option>
+
+                    <option value="3">
+                        IIIrd Semester
+                    </option>
+
+                    <option value="4">
+                        IVth Semester
+                    </option>
+
+                    <option value="6">
+                        VIth Semester
+                    </option>
+
+                    <option value="7">
+                        VIIth Semester
+                    </option>
+
+                    <option value="8">
+                        VIIIth Semester
+                    </option>
+
+                </select>
+
+
+
+                <!-- MONTH + YEAR -->
+
+                <div class="date-selectors">
+
+
+                    <select id="monthSelect">
+
+                        <option value="1">
+                            Jan
+                        </option>
+
+                        <option value="2">
+                            Feb
+                        </option>
+
+                        <option value="3">
+                            Mar
+                        </option>
+
+                        <option value="4">
+                            Apr
+                        </option>
+
+                        <option value="5">
+                            May
+                        </option>
+
+                        <option value="6">
+                            Jun
+                        </option>
+
+                        <option value="7">
+                            Jul
+                        </option>
+
+                        <option value="8" selected>
+                            Aug
+                        </option>
+
+                        <option value="9">
+                            Sep
+                        </option>
+
+                        <option value="10">
+                            Oct
+                        </option>
+
+                        <option value="11">
+                            Nov
+                        </option>
+
+                        <option value="12">
+                            Dec
+                        </option>
+
+                    </select>
+
+
+                    <select id="yearSelect">
+
+                        <option>
+                            2026
+                        </option>
+
+                        <option>
+                            2025
+                        </option>
+
+                        <option>
+                            2024
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 ATTENDANCE LEGEND
+                 ================================== -->
+
+            <div class="attendance-legend">
+
+
+                <span class="legend present">
+                    Present
+                </span>
+
+
+                <span class="legend absent">
+                    Absent
+                </span>
+
+
+                <span class="legend leave">
+                    Leave
+                </span>
+
+
+                <span class="legend na">
+                    N/A
+                </span>
+
+
+                <span class="legend holiday">
+                    Holiday
+                </span>
+
+
+                <span class="legend dutyleave">
+                    DutyLeave
+                </span>
+
+
+                <span class="legend onduty">
+                    On Duty
+                </span>
+
+
+                <span class="legend suspension">
+                    Suspension
+                </span>
+
+
+                <span class="legend specialleave">
+                    Special Leave
+                </span>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 ATTENDANCE TABLE
+                 ================================== -->
+
+            <div class="attendance-table-container">
+
+
+                <table
+                    id="attendanceTable"
+                    class="attendance-table"
+                >
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Period 1
+                            </th>
+
+                            <th>
+                                Period 2
+                            </th>
+
+                            <th>
+                                Period 3
+                            </th>
+
+                            <th>
+                                Period 4
+                            </th>
+
+                            <th>
+                                Period 5
+                            </th>
+
+                            <th>
+                                Period 6
+                            </th>
+
+                            <th>
+                                Period 7
+                            </th>
+
+                            <th>
+                                Period 8
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="attendanceBody">
+
+                        <!-- JavaScript will generate rows -->
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 ATTENDANCE SUMMARY
+                 ================================== -->
+
+            <div class="attendance-summary">
+
+
+                <div class="summary-row">
+
+
+                    <span class="summary-label">
+
+                        % For the month
+
+                    </span>
+
+
+                    <div class="progress-container">
+
+                        <div
+                            id="monthlyProgress"
+                            class="progress-bar"
+                        >
+
+                            <span id="monthlyPercentage">
+                                0%
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="summary-row">
+
+
+                    <span class="summary-label">
+
+                        % Till August
+
+                    </span>
+
+
+                    <div class="progress-container">
+
+                        <div
+                            id="overallProgress"
+                            class="progress-bar"
+                        >
+
+                            <span id="overallPercentage">
+                                95%
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script src="js/common.js"></script>
+
+<script src="js/attendance.js"></script>
+
+
+</body>
+
+</html>

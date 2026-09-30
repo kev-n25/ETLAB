@@ -1,0 +1,596 @@
+/* ==========================================
+   ETLAB ATTENDANCE
+   ========================================== */
+
+
+/* ==========================================
+   ATTENDANCE HEADER
+   ========================================== */
+
+.attendance-header {
+
+    min-height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 10px;
+
+    background:
+        linear-gradient(
+            #ffffff,
+            #eeeeee
+        );
+
+    border-bottom: 1px solid #cccccc;
+}
+
+
+.attendance-header h1 {
+
+    margin: 0;
+
+    color: #536b80;
+
+    font-size: 20px;
+
+    font-weight: normal;
+}
+
+
+/* ==========================================
+   ACTION BUTTONS
+   ========================================== */
+
+.attendance-actions {
+
+    display: flex;
+
+    gap: 5px;
+}
+
+
+.attendance-actions button {
+
+    padding: 7px 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 5px;
+
+    color: #333333;
+
+    font-size: 14px;
+}
+
+
+.attendance-actions button:hover {
+
+    background: #eeeeee;
+}
+
+
+/* ==========================================
+   TABS
+   ========================================== */
+
+.attendance-tabs {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 23px 30px 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.attendance-tabs a {
+
+    color: #0088cc;
+
+    font-size: 16px;
+
+    white-space: nowrap;
+}
+
+
+.attendance-tabs a:hover {
+
+    text-decoration: underline;
+}
+
+
+.attendance-tabs a.active {
+
+    font-weight: normal;
+
+    color: #0088cc;
+}
+
+
+/* ==========================================
+   STUDENT TITLE
+   ========================================== */
+
+.student-title {
+
+    margin: 36px 18px;
+
+    color: #777777;
+
+    font-size: 21px;
+
+    font-weight: normal;
+}
+
+
+/* ==========================================
+   FILTERS
+   ========================================== */
+
+.attendance-filters {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+
+.attendance-filters select {
+
+    width: 260px;
+
+    height: 34px;
+
+    padding: 5px 10px;
+
+    background: white;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 4px;
+
+    color: #555555;
+}
+
+
+.date-selectors {
+
+    display: flex;
+
+    gap: 5px;
+}
+
+
+.date-selectors select {
+
+    width: 260px;
+}
+
+
+/* ==========================================
+   LEGEND
+   ========================================== */
+
+.attendance-legend {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 23px;
+
+    margin: 0 20px 55px;
+}
+
+
+.legend {
+
+    min-width: 94px;
+
+    padding: 7px 15px;
+
+    border: 1px solid #222222;
+
+    text-align: center;
+
+    color: #000000;
+
+    font-size: 14px;
+}
+
+
+/* ---------- Legend Colors ---------- */
+
+.legend.present {
+
+    background: var(--present);
+}
+
+
+.legend.absent {
+
+    background: var(--absent);
+}
+
+
+.legend.leave {
+
+    background: var(--leave);
+}
+
+
+.legend.na {
+
+    background: var(--na);
+}
+
+
+.legend.holiday {
+
+    background: var(--holiday);
+}
+
+
+.legend.dutyleave {
+
+    background: var(--dutyleave);
+}
+
+
+.legend.onduty {
+
+    background: var(--onduty);
+}
+
+
+.legend.suspension {
+
+    background: var(--suspension);
+}
+
+
+.legend.specialleave {
+
+    background: var(--specialleave);
+}
+
+
+/* ==========================================
+   TABLE CONTAINER
+   ========================================== */
+
+.attendance-table-container {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    padding: 0 30px;
+}
+
+
+/* ==========================================
+   ATTENDANCE TABLE
+   ========================================== */
+
+.attendance-table {
+
+    width: 100%;
+
+    min-width: 1050px;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+}
+
+
+/* ---------- Header ---------- */
+
+.attendance-table th {
+
+    height: 57px;
+
+    padding: 10px;
+
+    background: #42619b;
+
+    border-top: 2px solid #111111;
+
+    border-right: 2px solid #111111;
+
+    border-bottom: 2px solid #111111;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+.attendance-table th:first-child {
+
+    border-left: 2px solid #111111;
+
+    border-radius: 12px 0 0 0;
+}
+
+
+.attendance-table th:last-child {
+
+    border-radius: 0 12px 0 0;
+}
+
+
+/* ---------- Body ---------- */
+
+.attendance-table td {
+
+    height: 44px;
+
+    padding: 5px;
+
+    border-right: 2px solid #111111;
+
+    border-bottom: 2px solid #111111;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+
+.attendance-table td:first-child {
+
+    border-left: 2px solid #111111;
+}
+
+
+/* ==========================================
+   DATE COLUMN
+   ========================================== */
+
+.attendance-date {
+
+    width: 95px;
+
+    background: #42619b;
+
+    color: white;
+
+    font-size: 17px;
+
+    border-left: 2px solid #111111 !important;
+
+    border-right: 2px solid #8b0000 !important;
+
+    border-radius: 12px 0 0 12px;
+}
+
+
+/* ==========================================
+   ATTENDANCE STATUS CELLS
+   ========================================== */
+
+.attendance-cell {
+
+    min-width: 125px;
+
+    height: 44px;
+}
+
+
+.status-present {
+
+    background: var(--present);
+}
+
+
+.status-absent {
+
+    background: var(--absent);
+
+    color: white;
+}
+
+
+.status-leave {
+
+    background: var(--leave);
+}
+
+
+.status-na {
+
+    background: var(--na);
+}
+
+
+.status-holiday {
+
+    background: var(--holiday);
+}
+
+
+.status-dutyleave {
+
+    background: var(--dutyleave);
+
+    color: white;
+}
+
+
+.status-onduty {
+
+    background: var(--onduty);
+}
+
+
+.status-suspension {
+
+    background: var(--suspension);
+}
+
+
+.status-specialleave {
+
+    background: var(--specialleave);
+}
+
+
+/* ==========================================
+   SUMMARY
+   ========================================== */
+
+.attendance-summary {
+
+    margin: 0 30px 22px;
+
+    padding: 18px 35px;
+
+    background: #42619b;
+
+    color: white;
+
+    border: 1px solid #222222;
+
+    border-radius: 10px;
+}
+
+
+.summary-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    margin: 8px 0;
+}
+
+
+.summary-label {
+
+    width: 155px;
+
+    text-align: right;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+.progress-container {
+
+    flex: 1;
+
+    height: 28px;
+
+    background: #087dc1;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+.progress-bar {
+
+    height: 100%;
+
+    width: 0%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #0b9eea;
+
+    border-radius: 15px;
+
+    transition: width 0.5s ease;
+}
+
+
+.progress-bar span {
+
+    color: #000000;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .attendance-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        padding: 10px;
+    }
+
+
+    .attendance-tabs {
+
+        gap: 15px;
+    }
+
+
+    .summary-row {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+    }
+
+
+    .summary-label {
+
+        width: auto;
+
+        text-align: left;
+    }
+
+}

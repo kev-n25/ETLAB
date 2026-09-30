@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f6f8;
+    color: #222;
+}
+
+.header {
+    background: white;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header p {
+    margin: 5px 0 0;
+    color: #777;
+}
+
+.header button {
+    margin-left: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.container {
+    padding: 35px 40px;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ddd;
+}
+
+.controls label,
+.topic-section label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+select,
+input {
+    width: 100%;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+}
+
+.topic-section {
+    background: white;
+
+    margin-top: 20px;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ddd;
+}
+
+.students-section {
+    background: white;
+
+    margin-top: 20px;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ddd;
+}
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.section-header button {
+    padding: 8px 12px;
+
+    margin-left: 5px;
+
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 12px;
+
+    border-bottom: 1px solid #ddd;
+
+    text-align: left;
+}
+
+th {
+    background: #f1f1f1;
+}
+
+.attendance-buttons button {
+    padding: 7px 12px;
+
+    margin-right: 5px;
+
+    cursor: pointer;
+
+    border: 1px solid #ccc;
+
+    border-radius: 4px;
+
+    background: white;
+}
+
+.attendance-buttons button.selected {
+    font-weight: bold;
+    border: 2px solid #333;
+}
+
+.save-button {
+    margin-top: 25px;
+
+    padding: 13px 30px;
+
+    background: #222;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.save-button:disabled {
+    background: #aaa;
+
+    cursor: not-allowed;
+}
+
+#message {
+    margin-top: 15px;
+
+    font-weight: bold;
+}

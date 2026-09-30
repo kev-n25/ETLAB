@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ETLAB - Faculty Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="css/faculty-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+    <header class="faculty-header">
+
+        <div>
+
+            <h1>
+                TKM College of Engineering
+            </h1>
+
+            <p>
+                Faculty Portal
+            </p>
+
+        </div>
+
+
+        <div class="faculty-user">
+
+            <span id="facultyName">
+                Faculty
+            </span>
+
+            <button id="logoutButton">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="faculty-container">
+
+        <h2>
+            Faculty Dashboard
+        </h2>
+
+
+        <div class="dashboard-grid">
+
+            <button
+                class="dashboard-card"
+                onclick="openAttendance()"
+            >
+
+                <h3>
+                    Attendance
+                </h3>
+
+                <p>
+                    Mark and manage student attendance
+                </p>
+
+            </button>
+
+
+            <button
+                class="dashboard-card"
+                onclick="openAssignments()"
+            >
+
+                <h3>
+                    Assignments
+                </h3>
+
+                <p>
+                    Publish assignments and documents
+                </p>
+
+            </button>
+
+
+            <button
+                class="dashboard-card"
+                onclick="openClasses()"
+            >
+
+                <h3>
+                    My Classes
+                </h3>
+
+                <p>
+                    View your assigned classes and subjects
+                </p>
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/faculty-dashboard.js"></script>
+
+</body>
+
+</html>

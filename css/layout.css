@@ -1,0 +1,358 @@
+/* ==========================================
+   ETLAB COMMON LAYOUT
+   ========================================== */
+
+
+/* ---------- APP ---------- */
+
+.app {
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   SIDEBAR
+   ========================================== */
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 175px;
+
+    background: var(--sidebar);
+
+    color: #dddddd;
+
+    z-index: 1000;
+}
+
+
+/* ---------- ETLAB Logo ---------- */
+
+.brand {
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 20px;
+
+    gap: 8px;
+
+    background: #252525;
+
+    color: #36b5df;
+
+    font-size: 25px;
+}
+
+
+.brand-text {
+
+    font-size: 25px;
+
+    font-weight: 400;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.sidebar nav {
+    width: 100%;
+}
+
+
+.nav-item {
+
+    height: 73px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 27px;
+
+    padding: 0 22px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #dddddd;
+
+    font-size: 16px;
+
+    transition: background 0.2s ease;
+}
+
+
+.nav-item:hover {
+
+    background: var(--sidebar-hover);
+
+    color: #ffffff;
+}
+
+
+.nav-item.active {
+
+    background: var(--sidebar-active);
+
+    color: #ffffff;
+}
+
+
+.nav-icon {
+
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+
+.content {
+
+    margin-left: 175px;
+
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   TOP HEADER
+   ========================================== */
+
+.topbar {
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 22px;
+
+    background: linear-gradient(
+        #363636,
+        #202020
+    );
+
+    color: #dddddd;
+
+    font-size: 14px;
+}
+
+
+/* ---------- Top Right ---------- */
+
+.top-actions {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0;
+}
+
+
+.top-action {
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 14px;
+
+    border-left: 1px solid #444444;
+
+    border-right: 1px solid #222222;
+
+    color: #dddddd;
+
+    font-size: 13px;
+}
+
+
+.top-action:hover {
+
+    background: #3b3b3b;
+}
+
+
+.message-count {
+
+    margin-left: 5px;
+
+    padding: 2px 5px;
+
+    background: #d9534f;
+
+    border-radius: 8px;
+
+    color: white;
+
+    font-size: 10px;
+}
+
+
+.logout-button {
+
+    height: 36px;
+
+    padding: 0 16px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #dddddd;
+
+    font-size: 13px;
+}
+
+
+.logout-button:hover {
+
+    background: #3b3b3b;
+}
+
+
+/* ==========================================
+   BREADCRUMB
+   ========================================== */
+
+.breadcrumb {
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 22px;
+
+    background: #e5e5e5;
+
+    border-bottom: 1px solid #cccccc;
+
+    color: #777777;
+
+    font-size: 13px;
+}
+
+
+.breadcrumb .current {
+
+    color: #222222;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   PAGE PANEL
+   ========================================== */
+
+.page-panel {
+
+    margin: 18px 22px;
+
+    min-height: 650px;
+
+    background: #ffffff;
+
+    border: 1px solid #cccccc;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+
+        width: 60px;
+    }
+
+
+    .brand-text {
+
+        display: none;
+    }
+
+
+    .brand {
+
+        justify-content: center;
+
+        padding: 0;
+    }
+
+
+    .nav-item {
+
+        justify-content: center;
+
+        padding: 0;
+    }
+
+
+    .nav-item span:not(.nav-icon) {
+
+        display: none;
+    }
+
+
+    .content {
+
+        margin-left: 60px;
+    }
+
+
+    .topbar {
+
+        padding: 0 10px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .top-action {
+
+        padding: 0 7px;
+    }
+
+
+    .top-action.username {
+
+        display: none;
+    }
+
+
+    .page-panel {
+
+        margin: 10px;
+    }
+
+}
