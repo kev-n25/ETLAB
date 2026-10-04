@@ -1,0 +1,563 @@
+/* ==========================================
+   ETLAB DASHBOARD
+   ========================================== */
+
+
+/* ==========================================
+   DASHBOARD CONTAINER
+   ========================================== */
+
+.dashboard-container {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        330px;
+
+    gap: 20px;
+
+    padding: 20px 22px;
+
+}
+
+
+/* ==========================================
+   LEFT PANEL
+   ========================================== */
+
+.left-panel {
+
+    min-width: 0;
+
+}
+
+
+/* ==========================================
+   RIGHT PANEL
+   ========================================== */
+
+.right-panel {
+
+    min-width: 0;
+
+}
+
+
+/* ==========================================
+   VISION / MISSION
+   ========================================== */
+
+.vision-mission-card {
+
+    padding: 22px;
+
+    margin-bottom: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+}
+
+
+.vision-mission-card h3 {
+
+    margin-bottom: 8px;
+
+    color: #333333;
+
+    font-size: 17px;
+
+}
+
+
+.vision-mission-card p {
+
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   SERVICES GRID
+   ========================================== */
+
+.services-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(120px, 1fr));
+
+    gap: 12px;
+
+}
+
+
+/* ==========================================
+   SERVICE CARD
+   ========================================== */
+
+.service-card {
+
+    min-height: 105px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    color: #333333;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.service-card:hover {
+
+    background: #f7f7f7;
+
+    border-color: #aaaaaa;
+
+    transform: translateY(-2px);
+
+}
+
+
+.service-card i {
+
+    font-size: 25px;
+
+}
+
+
+.service-card span {
+
+    font-size: 12px;
+
+    text-align: center;
+
+}
+
+
+/* ==========================================
+   ICON COLORS
+   ========================================== */
+
+.text-blue {
+
+    color: #4285f4;
+
+}
+
+
+.text-green {
+
+    color: #43a047;
+
+}
+
+
+.text-orange {
+
+    color: #f57c00;
+
+}
+
+
+.text-purple {
+
+    color: #7e57c2;
+
+}
+
+
+.text-red {
+
+    color: #e53935;
+
+}
+
+
+.text-teal {
+
+    color: #00897b;
+
+}
+
+
+.text-gray {
+
+    color: #666666;
+
+}
+
+
+/* ==========================================
+   WIDGET
+   ========================================== */
+
+.widget-box {
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+}
+
+
+.widget-header {
+
+    min-height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0 15px;
+
+    background: #f5f5f5;
+
+    border-bottom: 1px solid var(--border);
+
+    color: #333333;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.widget-content {
+
+    padding: 15px;
+
+}
+
+
+.p-0 {
+
+    padding: 0;
+
+}
+
+
+.mt-3 {
+
+    margin-top: 20px;
+
+}
+
+
+/* ==========================================
+   CALENDAR
+   ========================================== */
+
+.calendar-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+}
+
+
+.calendar-table th,
+.calendar-table td {
+
+    padding: 8px 3px;
+
+    text-align: center;
+
+    border: 1px solid #eeeeee;
+
+    font-size: 11px;
+
+}
+
+
+.calendar-table th {
+
+    background: #f5f5f5;
+
+    font-weight: bold;
+
+}
+
+
+.calendar-month {
+
+    padding: 12px !important;
+
+    background: #eeeeee !important;
+
+    font-size: 14px !important;
+
+}
+
+
+.calendar-table .today {
+
+    background: #4285f4;
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+    border-radius: 50%;
+
+}
+
+
+/* ==========================================
+   NOTICE BOARD
+   ========================================== */
+
+.notice-list {
+
+    list-style: none;
+
+}
+
+
+.notice-list li {
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eeeeee;
+
+}
+
+
+.notice-list li:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.notice-date {
+
+    margin-bottom: 4px;
+
+    color: #999999;
+
+    font-size: 10px;
+
+}
+
+
+.notice-title a {
+
+    color: var(--link);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+.notice-title a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* ==========================================
+   MODAL
+   ========================================== */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    background: rgba(0, 0, 0, 0.55);
+
+}
+
+
+.modal-content {
+
+    width: min(
+        450px,
+        calc(100% - 40px)
+    );
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #cccccc;
+
+}
+
+
+.modal-content h2 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.modal-content p {
+
+    color: #666666;
+
+}
+
+
+.close-modal {
+
+    float: right;
+
+    cursor: pointer;
+
+    font-size: 25px;
+
+    color: #666666;
+
+}
+
+
+.close-modal:hover {
+
+    color: #000000;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1100px) {
+
+    .dashboard-container {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .right-panel {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 20px;
+
+    }
+
+
+    .right-panel
+    .mt-3 {
+
+        margin-top: 0;
+
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .services-grid {
+
+        grid-template-columns:
+            repeat(3, minmax(100px, 1fr));
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-container {
+
+        padding: 12px;
+
+    }
+
+
+    .services-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(100px, 1fr));
+
+    }
+
+
+    .right-panel {
+
+        display: block;
+
+    }
+
+
+    .right-panel
+    .mt-3 {
+
+        margin-top: 20px;
+
+    }
+
+
+    .topbar {
+
+        font-size: 12px;
+
+    }
+
+}

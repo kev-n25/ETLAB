@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ETLAB - Login</title>
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================
+         COLLEGE HEADER
+         ================================== -->
+
+    <header class="login-header">
+
+        <div class="college-brand">
+
+
+            <img
+                src="assets/logo/college-logo.png"
+                alt="TKM College Logo"
+                class="college-logo"
+            >
+
+
+            <div class="college-details">
+
+                <h1>
+                    TKM College of Engineering
+                </h1>
+
+                <h2>
+                    Affiliated To APJ Abdul Kalam Technological University
+                </h2>
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================
+         LOGIN AREA
+         ================================== -->
+
+    <main class="login-area">
+
+
+        <section class="login-box">
+
+
+            <form id="loginForm">
+
+
+                <!-- USERNAME -->
+
+                <div class="login-row">
+
+                    <label for="username">
+
+                        USERNAME <span>*</span>
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="username"
+                        autocomplete="username"
+                    >
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="login-row">
+
+                    <label for="password">
+
+                        PASSWORD <span>*</span>
+
+                    </label>
+
+
+                    <div class="password-container">
+
+                        <input
+                            type="password"
+                            id="password"
+                            autocomplete="current-password"
+                        >
+
+
+                        <button
+                            type="button"
+                            id="showPassword"
+                            class="eye-button"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <p
+                    id="loginError"
+                    class="login-error"
+                ></p>
+
+
+
+                <!-- LOGIN -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+
+                    ✓ &nbsp; Login
+
+                </button>
+
+
+
+                <!-- FORGOT PASSWORD -->
+
+                <a
+                    href="#"
+                    class="forgot-password"
+                >
+
+                    Forgot password?
+
+                </a>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================
+         FOOTER
+         ================================== -->
+
+    <footer class="login-footer">
+
+        © 2026 Etuwa Concepts, All rights reserved.
+
+    </footer>
+
+
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
