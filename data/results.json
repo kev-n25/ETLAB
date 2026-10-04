@@ -1,0 +1,73 @@
+[
+    {
+        "subject": "Design and Analysis of Algorithms",
+        "semester": 5,
+        "type": "Sessional Exams",
+        "date": "2026-08-01",
+        "marks": 44,
+        "total": 50
+    },
+
+    {
+        "subject": "Advanced Web Technologies",
+        "semester": 5,
+        "type": "Sessional Exams",
+        "date": "2026-08-01",
+        "marks": 46,
+        "total": 50
+    },
+
+    {
+        "subject": "Artificial Intelligence and Machine Learning",
+        "semester": 5,
+        "type": "Sessional Exams",
+        "date": "2026-08-02",
+        "marks": 41,
+        "total": 50
+    },
+
+    {
+        "subject": "Software Engineering",
+        "semester": 5,
+        "type": "Module Test",
+        "date": "2026-08-05",
+        "marks": 18,
+        "total": 20
+    },
+
+    {
+        "subject": "Finance and Accounting",
+        "semester": 5,
+        "type": "Assignments",
+        "date": "2026-08-07",
+        "marks": 10,
+        "total": 10
+    },
+
+    {
+        "subject": "Software Engineering",
+        "semester": 5,
+        "type": "Tutorials",
+        "date": "2026-08-09",
+        "marks": 9,
+        "total": 10
+    },
+
+    {
+        "subject": "Advanced Web Technologies",
+        "semester": 5,
+        "type": "Lab Evaluation",
+        "date": "2026-08-10",
+        "marks": 48,
+        "total": 50
+    },
+
+    {
+        "subject": "Artificial Intelligence and Machine Learning",
+        "semester": 5,
+        "type": "Lab Internal Test",
+        "date": "2026-08-11",
+        "marks": 19,
+        "total": 20
+    }
+]

@@ -1,0 +1,121 @@
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar{
+
+    height:58px;
+
+    background:#FFFFFF;
+
+    border-bottom:1px solid #D9D9D9;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 18px;
+
+}
+
+/* Left */
+
+.navbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.navbar-logo{
+
+    width:38px;
+
+    height:38px;
+
+    object-fit:contain;
+
+}
+
+.college-details{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.college-details h2{
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#222;
+
+}
+
+.college-details span{
+
+    font-size:15px;
+
+    color:#555;
+
+}
+
+/* Right */
+
+.navbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.navbar-right button{
+
+    width:42px;
+
+    height:36px;
+
+    border:1px solid #DDDDDD;
+
+    background:#FFFFFF;
+
+    border-radius:4px;
+
+    transition:.2s;
+
+}
+
+.navbar-right button:hover{
+
+    background:#F3F3F3;
+
+}
+
+/* Logout */
+
+.navbar-right button:last-child{
+
+    width:90px;
+
+    background:#2563EB;
+
+    color:white;
+
+    border:none;
+
+    font-weight:600;
+
+}

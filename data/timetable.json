@@ -1,0 +1,436 @@
+{
+    "semester": 5,
+
+    "periods": [
+        {
+            "period": 1,
+            "time": "9:00 - 10:00"
+        },
+        {
+            "period": 2,
+            "time": "10:05 - 11:05"
+        },
+        {
+            "period": 3,
+            "time": "11:10 - 12:10"
+        },
+        {
+            "period": 4,
+            "time": "1:05 - 2:05"
+        },
+        {
+            "period": 5,
+            "time": "2:10 - 3:10"
+        },
+        {
+            "period": 6,
+            "time": "3:15 - 4:15"
+        },
+        {
+            "period": 7,
+            "time": "Minor"
+        },
+        {
+            "period": 8,
+            "time": "Free"
+        }
+    ],
+
+    "days": [
+        {
+            "day": "Monday",
+            "date": "2026-08-10",
+
+            "classes": [
+                {
+                    "startPeriod": 1,
+                    "duration": 1,
+                    "code": "24CST501",
+                    "name": "Design and Analysis of Algorithms",
+                    "shortName": "DAA",
+                    "type": "Theory",
+                    "teacher": "Prof. Sajin Shah"
+                },
+
+                {
+                    "startPeriod": 2,
+                    "duration": 1,
+                    "code": "24HUT505",
+                    "name": "Finance and Accounting",
+                    "shortName": "FA",
+                    "type": "Theory",
+                    "teacher": "Prof. Safana"
+                },
+
+                {
+                    "startPeriod": 3,
+                    "duration": 1,
+                    "code": "",
+                    "name": "Mentoring",
+                    "shortName": "Mentoring",
+                    "type": "Special",
+                    "teacher": ""
+                },
+
+                {
+                    "startPeriod": 4,
+                    "duration": 1,
+                    "code": "24CSP503",
+                    "name": "Artificial Intelligence and Machine Learning",
+                    "shortName": "AIML",
+                    "type": "Theory",
+                    "teacher": "Dr. Ananthapadmanabhan N K"
+                },
+
+                {
+                    "startPeriod": 5,
+                    "duration": 1,
+                    "code": "24CSJ504",
+                    "name": "Advanced Web Technologies",
+                    "shortName": "AWT",
+                    "type": "Theory",
+                    "teacher": "Dr. Reshma Sheik"
+                },
+
+                {
+                    "startPeriod": 6,
+                    "duration": 1,
+                    "code": "24CSH511",
+                    "name": "Honors",
+                    "shortName": "Honors",
+                    "type": "Elective",
+                    "teacher": "Jerusha George"
+                },
+
+                {
+                    "startPeriod": 7,
+                    "duration": 2,
+                    "code": "",
+                    "name": "Free Period",
+                    "shortName": "Free Period",
+                    "type": "Free",
+                    "teacher": ""
+                }
+            ]
+        },
+
+        {
+            "day": "Tuesday",
+            "date": "2026-08-11",
+
+            "classes": [
+                {
+                    "startPeriod": 1,
+                    "duration": 1,
+                    "code": "24CST502",
+                    "name": "Software Engineering",
+                    "shortName": "SE",
+                    "type": "Theory",
+                    "teacher": "Prof. Roy"
+                },
+
+                {
+                    "startPeriod": 2,
+                    "duration": 2,
+                    "code": "24CSJ504",
+                    "name": "Advanced Web Technologies Lab",
+                    "shortName": "AWT LAB (P)",
+                    "type": "Practical",
+                    "teacher": "Dr. Reshma Sheik"
+                },
+
+                {
+                    "startPeriod": 4,
+                    "duration": 1,
+                    "code": "24CST501",
+                    "name": "Design and Analysis of Algorithms",
+                    "shortName": "DAA",
+                    "type": "Theory",
+                    "teacher": "Prof. Sajin Shah"
+                },
+
+                {
+                    "startPeriod": 5,
+                    "duration": 2,
+                    "code": "24CSP503",
+                    "name": "Artificial Intelligence and Machine Learning Lab",
+                    "shortName": "AIML LAB",
+                    "type": "Practical",
+                    "teacher": "Dr. Ananthapadmanabhan N K"
+                },
+
+                {
+                    "startPeriod": 7,
+                    "duration": 1,
+                    "code": "",
+                    "name": "Minor",
+                    "shortName": "Minor",
+                    "type": "Elective",
+                    "teacher": ""
+                },
+
+                {
+                    "startPeriod": 8,
+                    "duration": 1,
+                    "code": "",
+                    "name": "Free Period",
+                    "shortName": "Free Period",
+                    "type": "Free",
+                    "teacher": ""
+                }
+            ]
+        },
+
+        {
+            "day": "Wednesday",
+            "date": "2026-08-12",
+
+            "classes": [
+                {
+                    "startPeriod": 1,
+                    "duration": 1,
+                    "code": "24CST501",
+                    "name": "Design and Analysis of Algorithms",
+                    "shortName": "DAA",
+                    "type": "Theory",
+                    "teacher": "Prof. Sajin Shah"
+                },
+
+                {
+                    "startPeriod": 2,
+                    "duration": 1,
+                    "code": "24CSJ504",
+                    "name": "Advanced Web Technologies",
+                    "shortName": "AWT",
+                    "type": "Theory",
+                    "teacher": "Dr. Reshma Sheik"
+                },
+
+                {
+                    "startPeriod": 3,
+                    "duration": 1,
+                    "code": "24CST502",
+                    "name": "Software Engineering",
+                    "shortName": "SE",
+                    "type": "Theory",
+                    "teacher": "Prof. Roy"
+                },
+
+                {
+                    "startPeriod": 4,
+                    "duration": 1,
+                    "code": "24CSP503",
+                    "name": "Artificial Intelligence and Machine Learning",
+                    "shortName": "AIML",
+                    "type": "Theory",
+                    "teacher": "Dr. Ananthapadmanabhan N K"
+                },
+
+                {
+                    "startPeriod": 5,
+                    "duration": 1,
+                    "code": "24HUT505",
+                    "name": "Finance and Accounting",
+                    "shortName": "FA",
+                    "type": "Theory",
+                    "teacher": "Prof. Safana"
+                },
+
+                {
+                    "startPeriod": 6,
+                    "duration": 1,
+                    "code": "24CSH511",
+                    "name": "Honors",
+                    "shortName": "Honors",
+                    "type": "Elective",
+                    "teacher": "Jerusha George"
+                },
+
+                {
+                    "startPeriod": 7,
+                    "duration": 1,
+                    "code": "",
+                    "name": "Minor",
+                    "shortName": "Minor",
+                    "type": "Elective",
+                    "teacher": ""
+                },
+
+                {
+                    "startPeriod": 8,
+                    "duration": 1,
+                    "code": "",
+                    "name": "Free Period",
+                    "shortName": "Free Period",
+                    "type": "Free",
+                    "teacher": ""
+                }
+            ]
+        },
+
+        {
+            "day": "Thursday",
+            "date": "2026-08-13",
+
+            "classes": [
+                {
+                    "startPeriod": 1,
+                    "duration": 1,
+                    "code": "24HUT505",
+                    "name": "Finance and Accounting",
+                    "shortName": "FA",
+                    "type": "Theory",
+                    "teacher": "Prof. Safana"
+                },
+
+                {
+                    "startPeriod": 2,
+                    "duration": 1,
+                    "code": "24CST502",
+                    "name": "Software Engineering",
+                    "shortName": "SE",
+                    "type": "Theory",
+                    "teacher": "Prof. Roy"
+                },
+
+                {
+                    "startPeriod": 3,
+                    "duration": 1,
+                    "code": "24CSP503",
+                    "name": "Artificial Intelligence and Machine Learning",
+                    "shortName": "AIML",
+                    "type": "Theory",
+                    "teacher": "Dr. Ananthapadmanabhan N K"
+                },
+
+                {
+                    "startPeriod": 4,
+                    "duration": 2,
+                    "code": "24CSJ504",
+                    "name": "Advanced Web Technologies Lab",
+                    "shortName": "AWT LAB (J)",
+                    "type": "Practical",
+                    "teacher": "Dr. Reshma Sheik"
+                },
+
+                {
+                    "startPeriod": 6,
+                    "duration": 1,
+                    "code": "24CSH511",
+                    "name": "Honors",
+                    "shortName": "Honors",
+                    "type": "Elective",
+                    "teacher": "Jerusha George"
+                },
+
+                {
+                    "startPeriod": 7,
+                    "duration": 1,
+                    "code": "",
+                    "name": "Minor",
+                    "shortName": "Minor",
+                    "type": "Elective",
+                    "teacher": ""
+                },
+
+                {
+                    "startPeriod": 8,
+                    "duration": 1,
+                    "code": "",
+                    "name": "Free Period",
+                    "shortName": "Free Period",
+                    "type": "Free",
+                    "teacher": ""
+                }
+            ]
+        },
+
+        {
+            "day": "Friday",
+            "date": "2026-08-14",
+
+            "classes": [
+                {
+                    "startPeriod": 1,
+                    "duration": 1,
+                    "code": "24CSH511",
+                    "name": "Honors",
+                    "shortName": "Honors",
+                    "type": "Elective",
+                    "teacher": "Jerusha George"
+                },
+
+                {
+                    "startPeriod": 2,
+                    "duration": 2,
+                    "code": "24HU507",
+                    "name": "Technical Writing",
+                    "shortName": "Technical Writing",
+                    "type": "Theory",
+                    "teacher": "Dr. Dimple A Shajahan"
+                },
+
+                {
+                    "startPeriod": 4,
+                    "duration": 1,
+                    "code": "",
+                    "name": "Free Period",
+                    "shortName": "Free Period",
+                    "type": "Free",
+                    "teacher": ""
+                },
+
+                {
+                    "startPeriod": 5,
+                    "duration": 2,
+                    "code": "24HU508",
+                    "name": "Soft Skills",
+                    "shortName": "Soft Skills",
+                    "type": "Theory",
+                    "teacher": "Prof. Bianka Thomas"
+                },
+
+                {
+                    "startPeriod": 7,
+                    "duration": 1,
+                    "code": "",
+                    "name": "Minor",
+                    "shortName": "Minor",
+                    "type": "Elective",
+                    "teacher": ""
+                },
+
+                {
+                    "startPeriod": 8,
+                    "duration": 1,
+                    "code": "",
+                    "name": "Free Period",
+                    "shortName": "Free Period",
+                    "type": "Free",
+                    "teacher": ""
+                }
+            ]
+        },
+
+        {
+            "day": "Saturday",
+            "date": "2026-08-15",
+
+            "classes": [
+                {
+                    "startPeriod": 1,
+                    "duration": 8,
+                    "code": "",
+                    "name": "Free Period",
+                    "shortName": "Free Period",
+                    "type": "Free",
+                    "teacher": ""
+                }
+            ]
+        }
+    ],
+
+    "specialClasses": [],
+
+    "changes": []
+}
