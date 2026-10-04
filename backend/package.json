@@ -8,7 +8,7 @@
     "dev": "nodemon server.js",
     "seed": "node seed.js",
     "hash-passwords": "node hashPasswords.js"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

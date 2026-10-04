@@ -3,226 +3,314 @@
    ========================================== */
 
 
+/* ==========================================
+   ELEMENTS
+   ========================================== */
+
 const loginForm =
-    document.getElementById("loginForm");
+    document.getElementById(
+        "loginForm"
+    );
+
 
 const usernameInput =
-    document.getElementById("username");
+    document.getElementById(
+        "username"
+    );
+
 
 const passwordInput =
-    document.getElementById("password");
+    document.getElementById(
+        "password"
+    );
+
 
 const showPassword =
-    document.getElementById("showPassword");
+    document.getElementById(
+        "showPassword"
+    );
+
 
 const loginError =
-    document.getElementById("loginError");
-
+    document.getElementById(
+        "loginError"
+    );
 
 
 /* ==========================================
    SHOW / HIDE PASSWORD
    ========================================== */
 
-showPassword.addEventListener(
-    "click",
-    function () {
+if (showPassword) {
 
-        if (passwordInput.type === "password") {
+    showPassword.addEventListener(
+        "click",
+        function () {
 
-            passwordInput.type = "text";
+            if (
+                passwordInput.type ===
+                "password"
+            ) {
 
-        } else {
+                passwordInput.type =
+                    "text";
 
-            passwordInput.type = "password";
+            } else {
+
+                passwordInput.type =
+                    "password";
+
+            }
 
         }
+    );
 
-    }
-);
-
+}
 
 
 /* ==========================================
    LOGIN
    ========================================== */
 
-loginForm.addEventListener(
-    "submit",
-    async function (event) {
+if (loginForm) {
 
-        event.preventDefault();
+    loginForm.addEventListener(
+        "submit",
+        async function (event) {
 
-
-        const username =
-            usernameInput.value.trim();
-
-        const password =
-            passwordInput.value.trim();
+            event.preventDefault();
 
 
-        loginError.textContent = "";
+            const username =
+                usernameInput.value.trim();
 
 
+            const password =
+                passwordInput.value.trim();
 
-        /* ==================================
-           VALIDATION
-           ================================== */
-
-        if (username === "") {
 
             loginError.textContent =
-                "Username is required.";
-
-            return;
-        }
-
-
-        if (password === "") {
-
-            loginError.textContent =
-                "Password is required.";
-
-            return;
-        }
-
-
-
-        /* ==================================
-           BACKEND LOGIN
-           ================================== */
-
-        try {
-
-            const response = await fetch(
-                "http://localhost:5000/api/auth/login",
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-
-                    body: JSON.stringify({
-                        username: username,
-                        password: password
-                    })
-                }
-            );
-
-
-            const data =
-                await response.json();
-
+                "";
 
 
             /* ==================================
-               LOGIN FAILED
+               VALIDATION
                ================================== */
 
-            if (!data.success) {
+            if (username === "") {
 
                 loginError.textContent =
-                    data.message ||
-                    "Invalid username or password.";
+                    "Username is required.";
 
                 return;
+
             }
 
 
+            if (password === "") {
+
+                loginError.textContent =
+                    "Password is required.";
+
+                return;
+
+            }
+
 
             /* ==================================
-               LOGIN SUCCESSFUL
+               BACKEND LOGIN
                ================================== */
 
-            console.log(
-                "Login successful:",
-                data
-            );
+            try {
+
+                const response =
+                    await fetch(
+                        "http://localhost:5000/api/auth/login",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify({
+                                    username:
+                                        username,
+
+                                    password:
+                                        password
+                                })
+                        }
+                    );
 
 
-            /* ---------- Store JWT ---------- */
+                const data =
+                    await response.json();
 
-            localStorage.setItem(
-                "token",
-                data.token
-            );
 
-            localStorage.setItem(
-                "role",
-                data.user.role
-            );
+                /* ==================================
+                   LOGIN FAILED
+                   ================================== */
 
-            if (data.user.role === "faculty") {
+                if (
+                    !response.ok ||
+                    !data.success
+                ) {
 
-                localStorage.setItem(
-                    "facultyId",
-                    data.profile._id
+                    loginError.textContent =
+                        data.message ||
+                        "Invalid username or password.";
+
+                    return;
+
+                }
+
+
+                /* ==================================
+                   LOGIN SUCCESSFUL
+                   ================================== */
+
+                console.log(
+                    "Login successful:",
+                    data
                 );
 
-            localStorage.setItem(
-                "facultyName",
-                data.profile.name
-            );
 
-            window.location.href =
-                "faculty-dashboard.html";
+                /* ==================================
+                   STORE JWT
+                   ================================== */
 
-            return;
+                localStorage.setItem(
+                    "token",
+                    data.token
+                );
+
+
+                /* ==================================
+                   STORE ROLE
+                   ================================== */
+
+                localStorage.setItem(
+                    "role",
+                    data.user.role
+                );
+
+
+                /* ==================================
+                   LOGIN STATUS
+                   ================================== */
+
+                localStorage.setItem(
+                    "isLoggedIn",
+                    "true"
+                );
+
+
+                /* ==================================
+                   FACULTY LOGIN
+                   ================================== */
+
+                if (
+                    data.user.role ===
+                    "faculty"
+                ) {
+
+                    if (
+                        data.profile &&
+                        data.profile._id
+                    ) {
+
+                        localStorage.setItem(
+                            "facultyId",
+                            data.profile._id
+                        );
+
+                    }
+
+
+                    if (
+                        data.profile &&
+                        data.profile.name
+                    ) {
+
+                        localStorage.setItem(
+                            "facultyName",
+                            data.profile.name
+                        );
+
+                    }
+
+
+                    window.location.href =
+                        "faculty-dashboard.html";
+
+
+                    return;
+
+                }
+
+
+                /* ==================================
+                   STUDENT LOGIN
+                   ================================== */
+
+                localStorage.setItem(
+                    "username",
+                    data.user.username ||
+                    username
+                );
+
+
+                if (
+                    data.profile &&
+                    data.profile.name
+                ) {
+
+                    localStorage.setItem(
+                        "studentName",
+                        data.profile.name
+                    );
+
+                }
+
+
+                if (
+                    data.profile &&
+                    data.profile._id
+                ) {
+
+                    localStorage.setItem(
+                        "studentId",
+                        data.profile._id
+                    );
+
+                }
+
+
+                /* ==================================
+                   REDIRECT TO STUDENT DASHBOARD
+                   ================================== */
+
+                window.location.href =
+                    "dashboard.html";
+
+
+            } catch (error) {
+
+                console.error(
+                    "Login error:",
+                    error
+                );
+
+
+                loginError.textContent =
+                    "Unable to connect to server.";
+
+            }
+
         }
+    );
 
-
-            /* ---------- Store user information ---------- */
-
-            localStorage.setItem(
-                "username",
-                data.user.username
-            );
-
-
-            localStorage.setItem(
-                "studentName",
-                data.profile.name
-            );
-
-
-            /* ---------- Store student ID ---------- */
-
-            localStorage.setItem(
-                "studentId",
-                data.profile._id
-            );
-
-
-            /* ---------- Login status ---------- */
-
-            localStorage.setItem(
-                "isLoggedIn",
-                "true"
-            );
-
-
-
-            /* ==================================
-               REDIRECT TO DASHBOARD
-               ================================== */
-
-            window.location.href =
-                "dashboard.html";
-
-
-        } catch (error) {
-
-            console.error(
-                "Login error:",
-                error
-            );
-
-
-            loginError.textContent =
-                "Unable to connect to server.";
-
-        }
-
-    }
-);
+}
