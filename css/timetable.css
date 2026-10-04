@@ -1,0 +1,636 @@
+/* ==========================================================
+   ETLAB CLONE - TIMETABLE
+========================================================== */
+
+
+/* ==========================================================
+   TIMETABLE CARD
+========================================================== */
+
+.timetable-card {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   CARD HEADER
+========================================================== */
+
+.timetable-card-header {
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 14px;
+
+    background: linear-gradient(
+        to bottom,
+        #ffffff,
+        #f4f4f4
+    );
+
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.title-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.title-area i {
+    width: 28px;
+
+    color: #777;
+
+    font-size: 16px;
+
+    text-align: center;
+}
+
+.title-area h1 {
+    margin: 0;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    color: #374151;
+}
+
+
+/* ==========================================================
+   DOWNLOAD BUTTON
+========================================================== */
+
+.download-btn {
+    height: 34px;
+
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    border: 1px solid #cfcfcf;
+
+    border-radius: 4px;
+
+    background: #ffffff;
+
+    color: #333;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.download-btn:hover {
+    background: #f1f1f1;
+}
+
+.download-btn i {
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   LEGEND
+========================================================== */
+
+.timetable-legend {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    padding: 8px 12px;
+
+    gap: 2px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    background: #ffffff;
+}
+
+.legend-item {
+    padding: 4px 7px;
+
+    border: 1px solid #777;
+
+    font-size: 12px;
+
+    color: #222;
+}
+
+.legend-item.theory {
+    background: #87b1f0;
+}
+
+.legend-item.lab {
+    background: #ff8989;
+}
+
+.legend-item.free {
+    background: #ffc477;
+}
+
+.legend-item.elective {
+    background: #d9ed75;
+}
+
+
+/* ==========================================================
+   WEEK CONTROLS
+========================================================== */
+
+.week-controls {
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    padding: 12px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.week-btn {
+    height: 34px;
+
+    padding: 0 15px;
+
+    border: 1px solid #2899b7;
+
+    border-radius: 5px;
+
+    background: #3aa8c5;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.week-btn:hover {
+    background: #258ca8;
+}
+
+.date-selector {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.date-selector label {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #333;
+}
+
+.date-selector input {
+    width: 255px;
+
+    height: 35px;
+
+    padding: 0 10px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 4px;
+
+    background: #ffffff;
+
+    color: #444;
+
+    font-family: inherit;
+
+    font-size: 13px;
+}
+
+.date-selector input:focus {
+    outline: none;
+
+    border-color: #268ab0;
+
+    box-shadow: 0 0 0 2px rgba(38, 138, 176, 0.12);
+}
+
+
+/* ==========================================================
+   TIMETABLE TABLE WRAPPER
+========================================================== */
+
+.timetable-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    padding: 0 10px 12px;
+}
+
+
+/* ==========================================================
+   WEEKLY TIMETABLE
+========================================================== */
+
+.weekly-timetable {
+    width: 100%;
+
+    min-width: 1100px;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   TABLE HEADER
+========================================================== */
+
+.weekly-timetable thead th {
+    height: 60px;
+
+    padding: 7px 6px;
+
+    background: #f4f4f4;
+
+    border: 1px solid #d5d5d5;
+
+    color: #16821b;
+
+    text-align: left;
+
+    vertical-align: middle;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.weekly-timetable thead th:first-child {
+    width: 105px;
+}
+
+.weekly-timetable thead th span {
+    display: block;
+
+    margin-bottom: 4px;
+}
+
+.weekly-timetable thead th small {
+    display: block;
+
+    color: #555;
+
+    font-size: 10px;
+
+    font-weight: 400;
+}
+
+
+/* ==========================================================
+   DAY COLUMN
+========================================================== */
+
+.weekly-timetable tbody th.day-cell {
+    width: 105px;
+
+    padding: 12px 9px;
+
+    background: #ffffff;
+
+    border: 1px solid #d5d5d5;
+
+    color: #16821b;
+
+    text-align: left;
+
+    vertical-align: middle;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.day-cell .day-name {
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+.day-cell .day-date {
+    display: block;
+
+    color: #777;
+
+    font-size: 11px;
+
+    font-weight: 400;
+}
+
+
+/* ==========================================================
+   CLASS CELLS
+========================================================== */
+
+.weekly-timetable td {
+    min-width: 125px;
+
+    height: 115px;
+
+    padding: 10px;
+
+    border: 1px solid #ffffff;
+
+    color: #1f2937;
+
+    text-align: left;
+
+    vertical-align: top;
+
+    line-height: 1.45;
+
+    word-wrap: break-word;
+}
+
+
+/* Theory */
+
+.weekly-timetable td.theory {
+    background: #82aef0;
+}
+
+
+/* Practical / Lab */
+
+.weekly-timetable td.practical {
+    background: #ff8585;
+}
+
+
+/* Free period */
+
+.weekly-timetable td.free {
+    background: #ffc477;
+}
+
+
+/* Elective */
+
+.weekly-timetable td.elective {
+    background: #d8ed70;
+}
+
+
+/* Special / Other */
+
+.weekly-timetable td.special {
+    background: #c9e8f2;
+}
+
+
+/* ==========================================================
+   SUBJECT INFORMATION
+========================================================== */
+
+.class-code {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-weight: 500;
+}
+
+.class-name {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-weight: 500;
+}
+
+.class-type {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 12px;
+}
+
+.class-teacher {
+    display: block;
+
+    font-size: 12px;
+}
+
+
+/* Free period text */
+
+.free-period {
+    font-weight: 500;
+}
+
+
+/* ==========================================================
+   CURRENT DAY
+========================================================== */
+
+.weekly-timetable tr.current-day .day-cell {
+    background: #f7fff7;
+}
+
+.weekly-timetable tr.current-day td {
+    box-shadow: inset 0 0 0 1px rgba(22, 130, 27, 0.18);
+}
+
+
+/* ==========================================================
+   SUB SECTIONS
+========================================================== */
+
+.sub-section {
+    margin: 15px 10px 0;
+
+    border: 1px solid #d5d5d5;
+
+    background: #ffffff;
+}
+
+.sub-section-header {
+    min-height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 13px;
+
+    background: linear-gradient(
+        to bottom,
+        #ffffff,
+        #f4f4f4
+    );
+
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.sub-section-header i {
+    color: #777;
+
+    font-size: 14px;
+}
+
+.sub-section-header h2 {
+    margin: 0;
+
+    color: #4b5563;
+
+    font-size: 17px;
+
+    font-weight: 500;
+}
+
+
+/* ==========================================================
+   SECONDARY TABLES
+========================================================== */
+
+.secondary-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 13px;
+}
+
+.secondary-table th {
+    padding: 10px;
+
+    background: #f5f5f5;
+
+    border-bottom: 1px solid #dddddd;
+
+    color: #555;
+
+    text-align: left;
+
+    font-weight: 500;
+}
+
+.secondary-table td {
+    padding: 11px 10px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    color: #555;
+}
+
+.secondary-table .empty-row {
+    color: #777;
+
+    font-style: italic;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .timetable-card-header {
+        padding: 10px 12px;
+    }
+
+    .week-controls {
+        flex-wrap: wrap;
+    }
+
+    .date-selector {
+        order: -1;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .date-selector input {
+        width: 220px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .timetable-card-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 12px;
+    }
+
+    .download-btn {
+        align-self: flex-end;
+    }
+
+    .timetable-legend {
+        justify-content: flex-start;
+    }
+
+    .week-controls {
+        gap: 8px;
+    }
+
+    .week-btn {
+        padding: 0 10px;
+
+        font-size: 12px;
+    }
+
+    .date-selector {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .date-selector input {
+        width: 100%;
+    }
+
+    .timetable-table-wrapper {
+        padding-left: 5px;
+
+        padding-right: 5px;
+    }
+
+}

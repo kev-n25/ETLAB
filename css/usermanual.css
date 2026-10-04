@@ -1,0 +1,477 @@
+/* ==========================================
+   USER MANUAL
+   ========================================== */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    background: #f2f2f2;
+
+    color: #333;
+
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+
+.content {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* ==========================================
+   BREADCRUMB
+   ========================================== */
+
+.breadcrumb {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.breadcrumb-separator {
+
+    color: #999;
+
+}
+
+
+.breadcrumb .current {
+
+    color: #333;
+
+    font-weight: 500;
+
+}
+
+
+/* ==========================================
+   USER MANUAL CONTAINER
+   ========================================== */
+
+.manual-container {
+
+    flex: 1;
+
+    padding: 20px 22px;
+
+}
+
+
+/* ==========================================
+   BANNER
+   ========================================== */
+
+.manual-banner {
+
+    width: 100%;
+
+    padding: 14px 18px;
+
+    background: #00004d;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.4px;
+
+    border-bottom: 4px solid #d90429;
+
+    border-radius: 4px 4px 0 0;
+
+}
+
+
+/* ==========================================
+   CARDS
+   ========================================== */
+
+.manual-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(220px, 280px)
+        );
+
+    justify-content: center;
+
+    gap: 25px;
+
+    padding: 30px 10px;
+
+}
+
+
+/* ==========================================
+   MANUAL CARD
+   ========================================== */
+
+.manual-card {
+
+    min-height: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+
+    border-bottom: 3px solid #d90429;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    outline: none;
+
+    box-shadow:
+        0 2px 5px
+        rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+.manual-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 6px 16px
+        rgba(0, 0, 0, 0.12);
+
+}
+
+
+.manual-card:focus {
+
+    border-color: #4285f4;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(66, 133, 244, 0.2);
+
+}
+
+
+/* ==========================================
+   CARD ICON
+   ========================================== */
+
+.card-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    object-fit: contain;
+
+}
+
+
+/* ==========================================
+   CARD TITLE
+   ========================================== */
+
+.card-title {
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.manual-footer {
+
+    min-height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 0 22px;
+
+    background: #444444;
+
+    color: #bbbbbb;
+
+    font-size: 11px;
+
+}
+
+
+/* ==========================================
+   MODAL
+   ========================================== */
+
+.manual-modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.55
+        );
+
+}
+
+
+/* ==========================================
+   MODAL CONTENT
+   ========================================== */
+
+.manual-modal-content {
+
+    position: relative;
+
+    width: min(
+        420px,
+        100%
+    );
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 6px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+.modal-icon {
+
+    margin-bottom: 15px;
+
+    color: #d90429;
+
+    font-size: 35px;
+
+}
+
+
+.manual-modal-content h2 {
+
+    margin: 0 0 10px;
+
+    color: #333;
+
+    font-size: 20px;
+
+}
+
+
+.manual-modal-content p {
+
+    margin: 0 0 20px;
+
+    color: #666;
+
+    line-height: 1.5;
+
+}
+
+
+/* ==========================================
+   CLOSE X
+   ========================================== */
+
+.close-modal {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 15px;
+
+    width: 30px;
+
+    height: 30px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #888;
+
+    cursor: pointer;
+
+    font-size: 25px;
+
+    line-height: 30px;
+
+}
+
+
+.close-modal:hover {
+
+    color: #222;
+
+}
+
+
+/* ==========================================
+   MODAL BUTTON
+   ========================================== */
+
+.modal-close-button {
+
+    min-width: 90px;
+
+    padding: 8px 18px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background: #333333;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+}
+
+
+.modal-close-button:hover {
+
+    background: #222222;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1000px) {
+
+    .manual-cards {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(220px, 280px)
+            );
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .manual-container {
+
+        padding: 15px;
+
+    }
+
+
+    .manual-cards {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .manual-card {
+
+        max-width: 350px;
+
+        width: 100%;
+
+        margin: auto;
+
+    }
+
+
+    .manual-footer {
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: 8px 15px;
+
+    }
+
+}

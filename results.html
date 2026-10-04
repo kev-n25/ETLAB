@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Results | ETLAB Clone</title>
+
+    <link rel="icon" href="assets/logo/logo.png" type="image/png">
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/results.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ===================== HEADER ===================== -->
+
+    <div class="app">
+
+
+    <!-- ==========================================
+         SIDEBAR
+         ========================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Logo -->
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span class="brand-text">
+                ETLAB
+            </span>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-navigation">
+
+
+            <!-- Dashboard -->
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-gauge"></i>
+                </span>
+
+                <span class="nav-label">
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- Attendance -->
+
+            <a
+                href="attendance.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                </span>
+
+                <span class="nav-label">
+                    Attendance
+                </span>
+
+            </a>
+
+
+            <!-- Results -->
+
+            <a
+                href="results.html"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                </span>
+
+                <span class="nav-label">
+                    Results
+                </span>
+
+            </a>
+
+
+            <!-- Timetable -->
+
+            <a
+                href="timetable.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </span>
+
+                <span class="nav-label">
+                    Timetable
+                </span>
+
+            </a>
+
+
+            <!-- Assignments -->
+
+            <a
+                href="assignments.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </span>
+
+                <span class="nav-label">
+                    Assignments
+                </span>
+
+            </a>
+
+
+            <!-- Materials -->
+
+            <a
+                href="class-materials.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-book"></i>
+                </span>
+
+                <span class="nav-label">
+                    Materials
+                </span>
+
+            </a>
+
+
+            <!-- User Manual -->
+
+            <a
+                href="usermanual.html"
+                class="nav-item"
+                id="userManualButton"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-circle-question"></i>
+                </span>
+
+                <span class="nav-label">
+                    User Manual
+                </span>
+
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+
+    <div class="content">
+
+
+        <!-- ======================================
+             TOP BAR
+             ====================================== -->
+
+        <header class="topbar">
+
+
+            <!-- College -->
+
+            <div class="college-title">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <span>
+                    TKM College of Engineering
+                </span>
+
+            </div>
+
+
+            <!-- Top actions -->
+
+            <div class="top-actions">
+
+
+                <!-- Student -->
+
+                <div class="top-action username">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span id="studentName">
+                        Student
+                    </span>
+
+                </div>
+
+
+                <!-- Messages -->
+
+                <a
+                    href="#"
+                    class="top-action"
+                >
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span>
+                        Messages
+                    </span>
+
+                    <span class="message-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <!-- Logout -->
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ======================================
+             BREADCRUMB
+             ====================================== -->
+
+                <div class="breadcrumb">
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="current">Results</span>
+        </div>
+
+            <section class="results-card">
+
+                <div class="results-header">
+
+                    <h1>Results</h1>
+
+                    <select id="semester">
+
+                        <option>Semester 1</option>
+                        <option>Semester 2</option>
+                        <option>Semester 3</option>
+                        <option>Semester 4</option>
+                        <option selected>Semester 5</option>
+                        <option>Semester 6</option>
+                        <option>Semester 7</option>
+                        <option>Semester 8</option>
+
+                    </select>
+
+                </div>
+
+                <div class="result-tabs">
+
+                    <button class="active">Sessional Exams</button>
+
+                    <button>Module Test</button>
+
+                    <button>Class Projects</button>
+
+                    <button>Assignments</button>
+
+                    <button>Tutorials</button>
+
+                    <button>Seminars</button>
+
+                    <button>Internal Marks</button>
+
+                    <button>Lab Evaluation</button>
+
+                    <button>Lab Internal Test</button>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Subject</th>
+
+                                <th>Semester</th>
+
+                                <th>Date</th>
+
+                                <th>Marks</th>
+
+                                <th>Total</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="resultsBody">
+
+                            <tr>
+
+                                <td colspan="5">
+
+                                    No published results yet.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+</div>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/results.js"></script>
+
+</body>
+
+</html>

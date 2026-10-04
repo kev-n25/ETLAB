@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Timetable | ETLAB Clone</title>
+
+    <link rel="icon"
+          href="assets/logo/logo.png"
+          type="image/png">
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/timetable.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <div class="app">
+
+
+    <!-- ==========================================
+         SIDEBAR
+         ========================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Logo -->
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span class="brand-text">
+                ETLAB
+            </span>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-navigation">
+
+
+            <!-- Dashboard -->
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-gauge"></i>
+                </span>
+
+                <span class="nav-label">
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- Attendance -->
+
+            <a
+                href="attendance.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                </span>
+
+                <span class="nav-label">
+                    Attendance
+                </span>
+
+            </a>
+
+
+            <!-- Results -->
+
+            <a
+                href="results.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                </span>
+
+                <span class="nav-label">
+                    Results
+                </span>
+
+            </a>
+
+
+            <!-- Timetable -->
+
+            <a
+                href="timetable.html"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </span>
+
+                <span class="nav-label">
+                    Timetable
+                </span>
+
+            </a>
+
+
+            <!-- Assignments -->
+
+            <a
+                href="assignments.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </span>
+
+                <span class="nav-label">
+                    Assignments
+                </span>
+
+            </a>
+
+
+            <!-- Materials -->
+
+            <a
+                href="class-materials.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-book"></i>
+                </span>
+
+                <span class="nav-label">
+                    Materials
+                </span>
+
+            </a>
+
+
+            <!-- User Manual -->
+
+            <a
+                href="usermanual.html"
+                class="nav-item"
+                id="userManualButton"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-circle-question"></i>
+                </span>
+
+                <span class="nav-label">
+                    User Manual
+                </span>
+
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+
+    <div class="content">
+
+
+        <!-- ======================================
+             TOP BAR
+             ====================================== -->
+
+        <header class="topbar">
+
+
+            <!-- College -->
+
+            <div class="college-title">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <span>
+                    TKM College of Engineering
+                </span>
+
+            </div>
+
+
+            <!-- Top actions -->
+
+            <div class="top-actions">
+
+
+                <!-- Student -->
+
+                <div class="top-action username">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span id="studentName">
+                        Student
+                    </span>
+
+                </div>
+
+
+                <!-- Messages -->
+
+                <a
+                    href="#"
+                    class="top-action"
+                >
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span>
+                        Messages
+                    </span>
+
+                    <span class="message-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <!-- Logout -->
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ======================================
+             BREADCRUMB
+             ====================================== -->
+
+                <div class="breadcrumb">
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="current">Timetable</span>
+        </div>
+
+
+
+            <!-- =================================================
+                 TIMETABLE CARD
+            ================================================== -->
+
+            <section class="timetable-card">
+
+
+                <!-- =============================================
+                     CARD HEADER
+                ============================================== -->
+
+                <div class="timetable-card-header">
+
+                    <div class="title-area">
+
+                        <i class="fa-regular fa-calendar-days"></i>
+
+                        <h1>Timetable</h1>
+
+                    </div>
+
+
+                    <button class="download-btn"
+                            id="downloadBtn">
+
+                        <i class="fa-solid fa-download"></i>
+
+                        Download
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     CLASS TYPE LEGEND
+                ============================================== -->
+
+                <div class="timetable-legend">
+
+                    <span class="legend-item theory">
+                        Theory
+                    </span>
+
+                    <span class="legend-item lab">
+                        Practical
+                    </span>
+
+                    <span class="legend-item free">
+                        Free Period
+                    </span>
+
+                    <span class="legend-item elective">
+                        Elective
+                    </span>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     WEEK CONTROLS
+                ============================================== -->
+
+                <div class="week-controls">
+
+                    <button id="previousWeek"
+                            class="week-btn">
+
+                        <i class="fa-solid fa-chevron-left"></i>
+
+                        Previous Week
+
+                    </button>
+
+
+                    <div class="date-selector">
+
+                        <label for="selectedDate">
+
+                            Select Date:
+
+                        </label>
+
+                        <input type="date"
+                               id="selectedDate">
+
+                    </div>
+
+
+                    <button id="nextWeek"
+                            class="week-btn">
+
+                        Next Week
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     WEEKLY TIMETABLE
+                ============================================== -->
+
+                <div class="timetable-table-wrapper">
+
+                    <table class="weekly-timetable">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Day</th>
+
+                                <th>
+                                    <span>Period 1</span>
+                                    <small>9:00 - 10:00</small>
+                                </th>
+
+                                <th>
+                                    <span>Period 2</span>
+                                    <small>10:05 - 11:05</small>
+                                </th>
+
+                                <th>
+                                    <span>Period 3</span>
+                                    <small>11:10 - 12:10</small>
+                                </th>
+
+                                <th>
+                                    <span>Period 4</span>
+                                    <small>1:05 - 2:05</small>
+                                </th>
+
+                                <th>
+                                    <span>Period 5</span>
+                                    <small>2:10 - 3:10</small>
+                                </th>
+
+                                <th>
+                                    <span>Period 6</span>
+                                    <small>3:15 - 4:15</small>
+                                </th>
+
+                                <th>
+                                    <span>Period 7</span>
+                                    <small>Minor</small>
+                                </th>
+
+                                <th>
+                                    <span>Period 8</span>
+                                    <small>Free</small>
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="timetableBody">
+
+                            <!--
+                                Timetable rows will be generated
+                                dynamically using timetable.js
+                            -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     SPECIAL CLASSES
+                ============================================== -->
+
+                <section class="sub-section">
+
+                    <div class="sub-section-header">
+
+                        <i class="fa-regular fa-calendar-plus"></i>
+
+                        <h2>Special Classes</h2>
+
+                    </div>
+
+
+                    <table class="secondary-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Date</th>
+
+                                <th>Subject</th>
+
+                                <th>Teacher</th>
+
+                                <th>Period</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="specialClassesBody">
+
+                            <tr>
+
+                                <td colspan="4"
+                                    class="empty-row">
+
+                                    No upcoming special classes.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     CHANGES IN TIMETABLE
+                ============================================== -->
+
+                <section class="sub-section">
+
+                    <div class="sub-section-header">
+
+                        <i class="fa-solid fa-arrows-rotate"></i>
+
+                        <h2>Changes in Timetable</h2>
+
+                    </div>
+
+
+                    <table class="secondary-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Substitution Date</th>
+
+                                <th>Teacher</th>
+
+                                <th>In Place Of</th>
+
+                                <th>Period</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="changesBody">
+
+                            <tr>
+
+                                <td colspan="4"
+                                    class="empty-row">
+
+                                    No changes.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </section>
+
+
+            </section>
+
+        </main>
+    </div>
+</div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/common.js"></script>
+
+    <!-- PDF Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="js/timetable.js"></script>
+
+</body>
+
+</html>

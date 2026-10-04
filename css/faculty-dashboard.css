@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    background: #f5f6f8;
+
+    color: #222;
+}
+
+
+.faculty-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 40px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.faculty-header h1 {
+
+    margin: 0;
+
+    font-size: 24px;
+
+}
+
+
+.faculty-header p {
+
+    margin: 5px 0 0;
+
+    color: #777;
+
+}
+
+
+.faculty-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+#logoutButton {
+
+    padding: 8px 16px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+
+.faculty-container {
+
+    padding: 40px;
+
+}
+
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+
+    gap: 25px;
+
+    margin-top: 30px;
+
+}
+
+
+.dashboard-card {
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+
+.dashboard-card:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.dashboard-card h3 {
+
+    margin-top: 0;
+
+}
