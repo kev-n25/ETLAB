@@ -1,35 +1,49 @@
 const express = require("express");
 const cors = require("cors");
-const mongoose = require("mongoose");
-require("dotenv").config();
 const path = require("path");
+require("dotenv").config();
+
+const connectDB = require("./config/db");
 
 const assignmentRoutes = require("./routes/assignmentRoutes");
 const submissionRoutes = require("./routes/submissionRoutes");
 const materialRoutes = require("./routes/materialRoutes");
 
+const attendanceRoutes = require("./routes/attendanceRoutes");
+const authRoutes = require("./routes/authRoutes");
+const facultyRoutes = require("./routes/facultyRoutes");
+
 const app = express();
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
-        console.log("MongoDB connected successfully");
-    })
-    .catch((error) => {
-        console.error("MongoDB connection failed:", error);
-    });
+// Connect to MongoDB
+connectDB();
 
-app.use(express.json());
+// Middleware
 app.use(cors());
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));app.use("/api/assignments", assignmentRoutes);
-app.use("/api/submissions", submissionRoutes);
-app.use("/api/materials", materialRoutes);  
+app.use(express.json());
 
+// Serve uploaded files
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// API Routes
+app.use("/api/assignments", assignmentRoutes);
+app.use("/api/submissions", submissionRoutes);
+app.use("/api/materials", materialRoutes);
+
+app.use("/api/attendance", attendanceRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/faculty", facultyRoutes);
+
+// Root route
 app.get("/", (req, res) => {
-    res.send("ETLAB Backend is running!");
+    res.json({
+        message: "ETLAB Backend is running"
+    });
 });
 
+// Test route
 app.post("/test", (req, res) => {
     console.log(req.body);
 
@@ -38,36 +52,7 @@ app.post("/test", (req, res) => {
     });
 });
 
-const dotenv = require("dotenv");
-const cors = require("cors");
-
-const connectDB = require("./config/db");
-
-const attendanceRoutes = require("./routes/attendanceRoutes");
-const authRoutes = require("./routes/authRoutes");
-const facultyRoutes = require("./routes/facultyRoutes");
-
-dotenv.config();
-
-connectDB();
-
-const app = express();
-
-app.use(cors());
-app.use(express.json());
-
-app.use("/api/attendance", attendanceRoutes);
-app.use("/api/auth", authRoutes);
-app.use("/api/faculty", facultyRoutes);
-
-app.get("/", (req, res) => {
-    res.json({
-        message: "ETLAB Backend is running"
-    });
-});
-
-const PORT = process.env.PORT || 5000;
-
+// Start server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
