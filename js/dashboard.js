@@ -68,9 +68,8 @@ function renderDashboard() {
                 <!-- Results -->
 
                 <a
-                    href="#"
+                    href="results.html"
                     class="nav-item"
-                    data-feature="Results"
                 >
 
                     <span class="nav-icon">
@@ -87,9 +86,8 @@ function renderDashboard() {
                 <!-- Timetable -->
 
                 <a
-                    href="#"
+                    href="timetable.html"
                     class="nav-item"
-                    data-feature="Timetable"
                 >
 
                     <span class="nav-icon">
@@ -106,9 +104,8 @@ function renderDashboard() {
                 <!-- Assignments -->
 
                 <a
-                    href="#"
+                    href="assignments.html"
                     class="nav-item"
-                    data-feature="Assignments"
                 >
 
                     <span class="nav-icon">
@@ -125,9 +122,9 @@ function renderDashboard() {
                 <!-- Materials -->
 
                 <a
-                    href="#"
+                    href="class-materials.html"
                     class="nav-item"
-                    data-feature="Materials"
+                    
                 >
 
                     <span class="nav-icon">
@@ -366,9 +363,9 @@ function renderDashboard() {
                         <!-- Timetable -->
 
                         <a
-                            href="#"
+                            href="timetable.html"
                             class="service-card action-card"
-                            data-feature="Timetable"
+                            data-route="timetable.html"
                         >
 
                             <i class="fa-solid fa-calendar-days text-red"></i>
@@ -380,18 +377,18 @@ function renderDashboard() {
                         </a>
 
 
-                        <!-- Marks -->
+                        <!-- Results -->
 
                         <a
-                            href="#"
+                            href="results.html"
                             class="service-card action-card"
-                            data-feature="Marks"
+                            data-route="results.html"
                         >
 
                             <i class="fa-solid fa-square-poll-vertical text-teal"></i>
 
                             <span>
-                                Marks
+                                Results
                             </span>
 
                         </a>
@@ -468,9 +465,9 @@ function renderDashboard() {
                         <!-- Assignments -->
 
                         <a
-                            href="#"
+                            href="assignments.html"
                             class="service-card action-card"
-                            data-feature="Assignments"
+                            data-route="assignments.html"
                         >
 
                             <i class="fa-solid fa-file-lines text-purple"></i>
