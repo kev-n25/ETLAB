@@ -4,13 +4,12 @@ const assignmentSchema = new mongoose.Schema(
     {
         title: {
             type: String,
-            required: true,
-            trim: true
+            required: true
         },
 
         description: {
             type: String,
-            trim: true
+            required: true
         },
 
         courseOffering: {
@@ -27,16 +26,12 @@ const assignmentSchema = new mongoose.Schema(
 
         assignedDate: {
             type: Date,
-            default: Date.now
+            required: true
         },
 
         dueDate: {
             type: Date,
             required: true
-        },
-
-        attachment: {
-            type: String
         }
     },
     {
@@ -44,4 +39,6 @@ const assignmentSchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("Assignment", assignmentSchema);
+const Assignment = mongoose.model("Assignment", assignmentSchema);
+
+module.exports = Assignment;

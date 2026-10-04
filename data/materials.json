@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "subject": "Data Structures",
+    "semester": "S3",
+    "module": "Module 1",
+    "title": "Arrays and Linked Lists",
+    "type": "PDF",
+    "addedOn": "2026-07-01",
+    "file": "arrays_linkedlist.pdf",
+    "description": "Lecture notes covering arrays, pointers and linked lists."
+  },
+  {
+    "id": 2,
+    "subject": "Database Management Systems",
+    "semester": "S3",
+    "module": "Module 2",
+    "title": "Normalization",
+    "type": "PDF",
+    "addedOn": "2026-07-04",
+    "file": "normalization_notes.pdf",
+    "description": "Study material for 1NF, 2NF, 3NF and BCNF."
+  },
+  {
+    "id": 3,
+    "subject": "Operating Systems",
+    "semester": "S3",
+    "module": "Module 3",
+    "title": "CPU Scheduling",
+    "type": "PPT",
+    "addedOn": "2026-07-08",
+    "file": "cpu_scheduling.pptx",
+    "description": "Presentation explaining CPU scheduling algorithms."
+  },
+  {
+    "id": 4,
+    "subject": "Computer Networks",
+    "semester": "S3",
+    "module": "Module 4",
+    "title": "Socket Programming",
+    "type": "Video",
+    "addedOn": "2026-07-10",
+    "file": "socket_programming.mp4",
+    "description": "Recorded lecture on TCP and UDP socket programming."
+  },
+  {
+    "id": 5,
+    "subject": "Java Programming",
+    "semester": "S3",
+    "module": "Module 5",
+    "title": "Java Swing",
+    "type": "PDF",
+    "addedOn": "2026-07-12",
+    "file": "java_swing_notes.pdf",
+    "description": "Comprehensive notes on Java Swing components and layouts."
+  }
+]

@@ -15,17 +15,13 @@ const submissionSchema = new mongoose.Schema(
         },
 
         submittedAt: {
-            type: Date
-        },
-
-        file: {
-            type: String
+            type: Date,
+            default: Date.now
         },
 
         status: {
             type: String,
-            enum: ["pending", "submitted", "late"],
-            default: "pending"
+            default: "submitted"
         }
     },
     {

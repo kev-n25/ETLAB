@@ -2,263 +2,385 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Assignments | ETLAB Clone</title>
 
-    <title>ETLAB - Assignments</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <link
-        rel="stylesheet"
-        href="css/layout.css"
-    >
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/assignments.css">
 
 </head>
 
-
 <body>
 
+    <!-- ================= Sidebar ================= -->
 
-<div class="app">
+    <aside id="sidebar"></aside>
 
+    <!-- ================= Main Wrapper ================= -->
 
-    <!-- ==================================
-         SIDEBAR
-         ================================== -->
+    <div class="wrapper">
 
-    <aside class="sidebar">
+        <!-- ================= Navbar ================= -->
 
+        <header id="navbar"></header>
 
-        <div class="brand">
+        <!-- ================= Content ================= -->
 
-            <span>◔</span>
+        <main class="page-content">
 
-            <span class="brand-text">
-                etlab
-            </span>
+            <!-- Breadcrumb -->
 
-        </div>
+            <nav class="breadcrumb">
 
+                <span>Home</span>
 
-        <nav>
-
-
-            <a
-                href="dashboard.html"
-                class="nav-item"
-            >
-
-                <span class="nav-icon">⌂</span>
-
-                <span>Dashboard</span>
-
-            </a>
-
-
-            <a
-                href="attendance.html"
-                class="nav-item"
-            >
-
-                <span class="nav-icon">▦</span>
-
-                <span>Attendance</span>
-
-            </a>
-
-
-            <a
-                href="results.html"
-                class="nav-item"
-            >
-
-                <span class="nav-icon">◩</span>
-
-                <span>Results</span>
-
-            </a>
-
-
-            <a
-                href="timetable.html"
-                class="nav-item"
-            >
-
-                <span class="nav-icon">▦</span>
-
-                <span>TimeTable</span>
-
-            </a>
-
-
-            <a
-                href="assignments.html"
-                class="nav-item active"
-            >
-
-                <span class="nav-icon">▦</span>
+                <i class="fa-solid fa-angle-right"></i>
 
                 <span>Assignments</span>
 
-            </a>
+            </nav>
 
+            <!-- Page Header -->
 
-            <a
-                href="class-materials.html"
-                class="nav-item"
-            >
+            <section class="page-header">
 
-                <span class="nav-icon">▦</span>
+                <div>
 
-                <span>Materials</span>
+                    <h1>Assignments</h1>
 
-            </a>
+                    <p>View, manage and submit all your assignments.</p>
 
-
-            <a
-                href="usermanual.html"
-                class="nav-item"
-            >
-
-                <span class="nav-icon">▦</span>
-
-                <span>User Manual</span>
-
-            </a>
-
-
-        </nav>
-
-    </aside>
-
-
-
-    <!-- ==================================
-         CONTENT
-         ================================== -->
-
-    <div class="content">
-
-
-        <!-- TOPBAR -->
-
-        <header class="topbar">
-
-
-            <div>
-                TKM College of Engineering
-            </div>
-
-
-            <div class="top-actions">
-
-
-                <div class="top-action username">
-                    👤 KEVIN REJI ▾
                 </div>
 
+            </section>
 
-                <div class="top-action">
+            <!-- ================= Filters ================= -->
 
-                    ✉ Messages
+            <section class="filter-card">
 
-                    <span class="message-count">
-                        0
+                <div class="filter-grid">
+
+                    <div class="filter-group">
+
+                        <label>Semester</label>
+
+                        <select id="semesterFilter" class="select">
+
+    <option value="">All Semesters</option>
+
+    <option value="S3">III Semester</option>
+
+    <option value="S4">IV Semester</option>
+
+    <option value="S5">V Semester</option>
+
+</select>
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <label>Subject</label>
+
+                        <select
+                            id="subjectFilter"
+                            class="select">
+
+                            <option value="">All Subjects</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <label>Status</label>
+
+                        <select
+                            id="statusFilter"
+                            class="select">
+
+                            <option value="">All Status</option>
+                            <option>Pending</option>
+                            <option>Submitted</option>
+                            <option>Graded</option>
+                            <option>Overdue</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <label>Search</label>
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="searchInput"
+                                class="input"
+                                placeholder="Search assignment...">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= Assignment Table ================= -->
+
+            <section class="table-container">
+
+                <div class="table-header">
+
+                    <h3>Assignment List</h3>
+
+                    <span
+                        id="recordCount"
+                        class="record-count">
+
+                        Showing 0 assignments
+
                     </span>
 
                 </div>
 
+                <div class="table-responsive">
 
-                <button
-                    id="logoutButton"
-                    class="logout-button"
-                >
+                    <table
+                        id="assignmentTable"
+                        class="table">
 
-                    ↪ Logout
+                        <thead>
 
-                </button>
+                            <tr>
 
+                                <th>Subject</th>
 
-            </div>
+                                <th>Semester</th>
 
+                                <th>Assignment</th>
 
-        </header>
+                                <th>Faculty</th>
 
+                                <th>Issued On</th>
 
+                                <th>Due Date</th>
 
-        <!-- BREADCRUMB -->
+                                <th>Status</th>
 
-        <div class="breadcrumb">
+                                <th>Remaining</th>
 
-            🏠
+                                <th>Actions</th>
 
-            &nbsp;
+                            </tr>
 
-            Home
+                        </thead>
 
-            &nbsp;
+                        <tbody id="assignmentTableBody">
 
-            ›
+                            <!-- JavaScript renders here -->
 
-            &nbsp;
+                        </tbody>
 
-            <span class="current">
-                Assignments
-            </span>
+                    </table>
 
-        </div>
+                </div>
+                <!-- Empty State -->
 
+                <div id="emptyState" class="empty-state hidden">
 
+                    <i class="fa-regular fa-folder-open"></i>
 
-        <!-- ASSIGNMENTS CONTENT -->
+                    <h3>No Assignments Found</h3>
 
-        <main class="page-panel">
+                    <p>
+                        Try changing the search keyword or filters.
+                    </p>
 
+                </div>
 
-            <h1
-                style="
-                    padding:25px;
-                    margin:0;
-                "
-            >
+                <!-- Pagination -->
 
-                Assignments
+                <div class="pagination">
 
-            </h1>
+                    <span
+                        id="recordInfo"
+                        class="pagination-info">
 
+                        Showing 0 of 0
 
-            <p
-                style="
-                    padding:0 25px;
-                "
-            >
+                    </span>
 
-                Farzi will build the actual Assignments module here.
+                    <div
+                        id="pageNumbers"
+                        class="pagination-buttons">
 
-            </p>
+                    </div>
 
+                </div>
+
+            </section>
 
         </main>
 
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- Assignment Details Modal -->
+    <!-- ====================================================== -->
+
+    <div
+        id="detailsModal"
+        class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Assignment Details</h2>
+
+                <button
+                    class="close-btn"
+                    data-close="detailsModal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <div
+                id="assignmentDetails"
+                class="modal-body">
+
+                <!-- JavaScript renders assignment details -->
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-secondary"
+                    data-close="detailsModal">
+
+                    Close
+
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
 
-</div>
+    <!-- ====================================================== -->
+    <!-- Submit Assignment Modal -->
+    <!-- ====================================================== -->
 
+    <div
+        id="submitModal"
+        class="modal">
 
+        <div class="modal-content">
 
-<script src="js/common.js"></script>
+            <div class="modal-header">
 
+                <h2>Submit Assignment</h2>
+
+                <button
+                    class="close-btn"
+                    data-close="submitModal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <form id="uploadForm">
+
+                    <div class="form-group">
+
+                        <label for="assignmentFile">
+
+                            Upload Assignment
+
+                        </label>
+
+                        <input
+                            type="file"
+                            id="assignmentFile"
+                            accept=".pdf,.doc,.docx,.zip">
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            id="progressBar"
+                            class="progress-bar">
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-secondary"
+                    data-close="submitModal">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    id="submitAssignmentBtn"
+                    class="btn btn-primary">
+
+                    Submit Assignment
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Toast Container -->
+
+    <div id="toastContainer"></div>
+
+    <!-- JavaScript -->
+
+    <script src="js/assignments.js"></script>
 
 </body>
 
