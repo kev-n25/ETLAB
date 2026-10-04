@@ -576,9 +576,8 @@ function bindManualCards() {
                 "click",
                 () => {
 
-                    showWorkInProgress(
-                        featureName
-                    );
+                    window.location.href =
+                        `assets/${featureName}.pdf`;
 
                 }
             );
@@ -595,9 +594,8 @@ function bindManualCards() {
 
                         event.preventDefault();
 
-                        showWorkInProgress(
-                            featureName
-                        );
+                        window.location.href =
+                            `assets/${featureName}.pdf`;
 
                     }
 

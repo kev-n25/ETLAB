@@ -7,6 +7,12 @@
 
     <title>Assignments | ETLAB Clone</title>
 
+    <!-- Global styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="css/layout.css">
+
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +24,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- CSS -->
+    <!-- Existing page styles -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/assignments.css">
 
@@ -26,242 +32,473 @@
 
 <body>
 
-    <!-- ================= Sidebar ================= -->
+    <!-- =========================
+         APPLICATION LAYOUT
+         ========================= -->
 
-    <aside id="sidebar"></aside>
+    <div class="app">
 
-    <!-- ================= Main Wrapper ================= -->
+        <!-- =========================
+             SIDEBAR
+             ========================= -->
 
-    <div class="wrapper">
+        <aside class="sidebar">
 
-        <!-- ================= Navbar ================= -->
+            <!-- Logo -->
+            <div class="brand">
 
-        <header id="navbar"></header>
+                <div class="brand-logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
 
-        <!-- ================= Content ================= -->
+                <span class="brand-text">
+                    ETLAB
+                </span>
 
-        <main class="page-content">
+            </div>
 
-            <!-- Breadcrumb -->
 
-            <nav class="breadcrumb">
+            <!-- Navigation -->
+            <nav class="sidebar-navigation">
 
-                <span>Home</span>
+                <!-- Dashboard -->
+                <a
+                    href="dashboard.html"
+                    class="nav-item"
+                >
 
-                <i class="fa-solid fa-angle-right"></i>
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gauge"></i>
+                    </span>
 
-                <span>Assignments</span>
+                    <span class="nav-label">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- Attendance -->
+                <a
+                    href="attendance.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-clipboard-user"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        Attendance
+                    </span>
+
+                </a>
+
+
+                <!-- Results -->
+                <a
+                    href="results.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        Results
+                    </span>
+
+                </a>
+
+
+                <!-- Timetable -->
+                <a
+                    href="timetable.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        Timetable
+                    </span>
+
+                </a>
+
+
+                <!-- Assignments -->
+                <a
+                    href="assignments.html"
+                    class="nav-item active"
+                >
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        Assignments
+                    </span>
+
+                </a>
+
+
+                <!-- Materials -->
+                <a
+                    href="class-materials.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        Materials
+                    </span>
+
+                </a>
+
+
+                <!-- User Manual -->
+                <a
+                    href="usermanual.html"
+                    class="nav-item"
+                    id="userManualButton"
+                >
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        User Manual
+                    </span>
+
+                </a>
 
             </nav>
 
-            <!-- Page Header -->
+        </aside>
 
-            <section class="page-header">
 
-                <div>
+        <!-- =========================
+             MAIN CONTENT
+             ========================= -->
 
-                    <h1>Assignments</h1>
+        <div class="content">
 
-                    <p>View, manage and submit all your assignments.</p>
+            <main class="page-content">
 
-                </div>
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
 
-            </section>
+                    <span>
+                        Home
+                    </span>
 
-            <!-- ================= Filters ================= -->
+                    <i class="fa-solid fa-angle-right"></i>
 
-            <section class="filter-card">
+                    <span>
+                        Assignments
+                    </span>
 
-                <div class="filter-grid">
+                </nav>
 
-                    <div class="filter-group">
 
-                        <label>Semester</label>
+                <!-- Page Header -->
+                <section class="page-header">
 
-                        <select id="semesterFilter" class="select">
+                    <div>
 
-    <option value="">All Semesters</option>
+                        <h1>
+                            Assignments
+                        </h1>
 
-    <option value="S3">III Semester</option>
-
-    <option value="S4">IV Semester</option>
-
-    <option value="S5">V Semester</option>
-
-</select>
-
-                    </div>
-
-                    <div class="filter-group">
-
-                        <label>Subject</label>
-
-                        <select
-                            id="subjectFilter"
-                            class="select">
-
-                            <option value="">All Subjects</option>
-
-                        </select>
+                        <p>
+                            View, manage and submit all your assignments.
+                        </p>
 
                     </div>
 
-                    <div class="filter-group">
+                </section>
 
-                        <label>Status</label>
 
-                        <select
-                            id="statusFilter"
-                            class="select">
+                <!-- ================= Filters ================= -->
 
-                            <option value="">All Status</option>
-                            <option>Pending</option>
-                            <option>Submitted</option>
-                            <option>Graded</option>
-                            <option>Overdue</option>
+                <section class="filter-card">
 
-                        </select>
+                    <div class="filter-grid">
 
-                    </div>
+                        <div class="filter-group">
 
-                    <div class="filter-group">
+                            <label>
+                                Semester
+                            </label>
 
-                        <label>Search</label>
+                            <select
+                                id="semesterFilter"
+                                class="select"
+                            >
 
-                        <div class="search-box">
+                                <option value="">
+                                    All Semesters
+                                </option>
 
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                                <option value="S3">
+                                    III Semester
+                                </option>
 
-                            <input
-                                type="text"
-                                id="searchInput"
-                                class="input"
-                                placeholder="Search assignment...">
+                                <option value="S4">
+                                    IV Semester
+                                </option>
+
+                                <option value="S5">
+                                    V Semester
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filter-group">
+
+                            <label>
+                                Subject
+                            </label>
+
+                            <select
+                                id="subjectFilter"
+                                class="select"
+                            >
+
+                                <option value="">
+                                    All Subjects
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filter-group">
+
+                            <label>
+                                Status
+                            </label>
+
+                            <select
+                                id="statusFilter"
+                                class="select"
+                            >
+
+                                <option value="">
+                                    All Status
+                                </option>
+
+                                <option>
+                                    Pending
+                                </option>
+
+                                <option>
+                                    Submitted
+                                </option>
+
+                                <option>
+                                    Graded
+                                </option>
+
+                                <option>
+                                    Overdue
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filter-group">
+
+                            <label>
+                                Search
+                            </label>
+
+                            <div class="search-box">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                <input
+                                    type="text"
+                                    id="searchInput"
+                                    class="input"
+                                    placeholder="Search assignment..."
+                                >
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
+                </section>
 
-            </section>
 
-            <!-- ================= Assignment Table ================= -->
+                <!-- ================= Assignment Table ================= -->
 
-            <section class="table-container">
+                <section class="table-container">
 
-                <div class="table-header">
+                    <div class="table-header">
 
-                    <h3>Assignment List</h3>
+                        <h3>
+                            Assignment List
+                        </h3>
 
-                    <span
-                        id="recordCount"
-                        class="record-count">
-
-                        Showing 0 assignments
-
-                    </span>
-
-                </div>
-
-                <div class="table-responsive">
-
-                    <table
-                        id="assignmentTable"
-                        class="table">
-
-                        <thead>
-
-                            <tr>
-
-                                <th>Subject</th>
-
-                                <th>Semester</th>
-
-                                <th>Assignment</th>
-
-                                <th>Faculty</th>
-
-                                <th>Issued On</th>
-
-                                <th>Due Date</th>
-
-                                <th>Status</th>
-
-                                <th>Remaining</th>
-
-                                <th>Actions</th>
-
-                            </tr>
-
-                        </thead>
-
-                        <tbody id="assignmentTableBody">
-
-                            <!-- JavaScript renders here -->
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-                <!-- Empty State -->
-
-                <div id="emptyState" class="empty-state hidden">
-
-                    <i class="fa-regular fa-folder-open"></i>
-
-                    <h3>No Assignments Found</h3>
-
-                    <p>
-                        Try changing the search keyword or filters.
-                    </p>
-
-                </div>
-
-                <!-- Pagination -->
-
-                <div class="pagination">
-
-                    <span
-                        id="recordInfo"
-                        class="pagination-info">
-
-                        Showing 0 of 0
-
-                    </span>
-
-                    <div
-                        id="pageNumbers"
-                        class="pagination-buttons">
+                        <span
+                            id="recordCount"
+                            class="record-count"
+                        >
+                            Showing 0 assignments
+                        </span>
 
                     </div>
 
-                </div>
 
-            </section>
+                    <div class="table-responsive">
 
-        </main>
+                        <table
+                            id="assignmentTable"
+                            class="table"
+                        >
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Subject
+                                    </th>
+
+                                    <th>
+                                        Semester
+                                    </th>
+
+                                    <th>
+                                        Assignment
+                                    </th>
+
+                                    <th>
+                                        Faculty
+                                    </th>
+
+                                    <th>
+                                        Issued On
+                                    </th>
+
+                                    <th>
+                                        Due Date
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Remaining
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="assignmentTableBody">
+
+                                <!-- JavaScript renders here -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- Empty State -->
+
+                    <div
+                        id="emptyState"
+                        class="empty-state hidden"
+                    >
+
+                        <i class="fa-regular fa-folder-open"></i>
+
+                        <h3>
+                            No Assignments Found
+                        </h3>
+
+                        <p>
+                            Try changing the search keyword or filters.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Pagination -->
+
+                    <div class="pagination">
+
+                        <span
+                            id="recordInfo"
+                            class="pagination-info"
+                        >
+                            Showing 0 of 0
+                        </span>
+
+                        <div
+                            id="pageNumbers"
+                            class="pagination-buttons"
+                        >
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
 
     </div>
 
-    <!-- ====================================================== -->
-    <!-- Assignment Details Modal -->
-    <!-- ====================================================== -->
+
+    <!-- ======================================================
+         Assignment Details Modal
+         ====================================================== -->
 
     <div
         id="detailsModal"
-        class="modal">
+        class="modal"
+    >
 
         <div class="modal-content">
 
             <div class="modal-header">
 
-                <h2>Assignment Details</h2>
+                <h2>
+                    Assignment Details
+                </h2>
 
                 <button
                     class="close-btn"
-                    data-close="detailsModal">
+                    data-close="detailsModal"
+                >
 
                     <i class="fa-solid fa-xmark"></i>
 
@@ -269,22 +506,24 @@
 
             </div>
 
+
             <div
                 id="assignmentDetails"
-                class="modal-body">
+                class="modal-body"
+            >
 
                 <!-- JavaScript renders assignment details -->
 
             </div>
 
+
             <div class="modal-footer">
 
                 <button
                     class="btn btn-secondary"
-                    data-close="detailsModal">
-
+                    data-close="detailsModal"
+                >
                     Close
-
                 </button>
 
             </div>
@@ -293,29 +532,35 @@
 
     </div>
 
-    <!-- ====================================================== -->
-    <!-- Submit Assignment Modal -->
-    <!-- ====================================================== -->
+
+    <!-- ======================================================
+         Submit Assignment Modal
+         ====================================================== -->
 
     <div
         id="submitModal"
-        class="modal">
+        class="modal"
+    >
 
         <div class="modal-content">
 
             <div class="modal-header">
 
-                <h2>Submit Assignment</h2>
+                <h2>
+                    Submit Assignment
+                </h2>
 
                 <button
                     class="close-btn"
-                    data-close="submitModal">
+                    data-close="submitModal"
+                >
 
                     <i class="fa-solid fa-xmark"></i>
 
                 </button>
 
             </div>
+
 
             <div class="modal-body">
 
@@ -324,24 +569,24 @@
                     <div class="form-group">
 
                         <label for="assignmentFile">
-
                             Upload Assignment
-
                         </label>
 
                         <input
                             type="file"
                             id="assignmentFile"
-                            accept=".pdf,.doc,.docx,.zip">
+                            accept=".pdf,.doc,.docx,.zip"
+                        >
 
                     </div>
+
 
                     <div class="progress">
 
                         <div
                             id="progressBar"
-                            class="progress-bar">
-
+                            class="progress-bar"
+                        >
                         </div>
 
                     </div>
@@ -350,22 +595,21 @@
 
             </div>
 
+
             <div class="modal-footer">
 
                 <button
                     class="btn btn-secondary"
-                    data-close="submitModal">
-
+                    data-close="submitModal"
+                >
                     Cancel
-
                 </button>
 
                 <button
                     id="submitAssignmentBtn"
-                    class="btn btn-primary">
-
+                    class="btn btn-primary"
+                >
                     Submit Assignment
-
                 </button>
 
             </div>
@@ -374,11 +618,13 @@
 
     </div>
 
+
     <!-- Toast Container -->
 
     <div id="toastContainer"></div>
 
-    <!-- JavaScript -->
+
+    <!-- Existing JavaScript -->
 
     <script src="js/assignments.js"></script>
 
