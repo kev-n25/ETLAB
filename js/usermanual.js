@@ -69,9 +69,9 @@ function renderUserManual() {
                 <!-- Results -->
 
                 <a
-                    href="#"
+                    href="results.html"
                     class="nav-item"
-                    data-feature="Results"
+                    data-route="results.html"
                 >
 
                     <span class="nav-icon">
@@ -88,9 +88,10 @@ function renderUserManual() {
                 <!-- Timetable -->
 
                 <a
-                    href="#"
+                    href="timetable.html"
                     class="nav-item"
-                    data-feature="Timetable"
+                    data-route="timetable.html"
+                    
                 >
 
                     <span class="nav-icon">
@@ -107,9 +108,9 @@ function renderUserManual() {
                 <!-- Assignments -->
 
                 <a
-                    href="#"
+                    href="assignments.html"
                     class="nav-item"
-                    data-feature="Assignments"
+                    
                 >
 
                     <span class="nav-icon">
@@ -126,9 +127,9 @@ function renderUserManual() {
                 <!-- Materials -->
 
                 <a
-                    href="#"
+                    href="class-materials.html"
                     class="nav-item"
-                    data-feature="Materials"
+                    
                 >
 
                     <span class="nav-icon">

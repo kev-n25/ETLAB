@@ -29,158 +29,279 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- CSS -->
-
-    <link rel="stylesheet"
-          href="css/style.css">
-
-    <link rel="stylesheet"
-          href="css/navbar.css">
-
-    <link rel="stylesheet"
-          href="css/sidebar.css">
-
-    <link rel="stylesheet"
-          href="css/results.css">
-
-    <link rel="stylesheet"
-          href="css/responsive.css">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/results.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
     <!-- ===================== HEADER ===================== -->
 
-    <header class="navbar">
+    <div class="app">
 
-        <div class="navbar-left">
 
-            <img src="assets/logo/logo.png"
-                 alt="ETLAB Logo"
-                 class="navbar-logo">
+    <!-- ==========================================
+         SIDEBAR
+         ========================================== -->
 
-            <div class="college-details">
+    <aside class="sidebar">
 
-                <h2>ETLAB</h2>
 
-                <span>TKM College of Engineering</span>
+        <!-- Logo -->
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span class="brand-text">
+                ETLAB
+            </span>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-navigation">
+
+
+            <!-- Dashboard -->
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-gauge"></i>
+                </span>
+
+                <span class="nav-label">
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- Attendance -->
+
+            <a
+                href="attendance.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                </span>
+
+                <span class="nav-label">
+                    Attendance
+                </span>
+
+            </a>
+
+
+            <!-- Results -->
+
+            <a
+                href="results.html"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                </span>
+
+                <span class="nav-label">
+                    Results
+                </span>
+
+            </a>
+
+
+            <!-- Timetable -->
+
+            <a
+                href="timetable.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </span>
+
+                <span class="nav-label">
+                    Timetable
+                </span>
+
+            </a>
+
+
+            <!-- Assignments -->
+
+            <a
+                href="assignments.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </span>
+
+                <span class="nav-label">
+                    Assignments
+                </span>
+
+            </a>
+
+
+            <!-- Materials -->
+
+            <a
+                href="class-materials.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-book"></i>
+                </span>
+
+                <span class="nav-label">
+                    Materials
+                </span>
+
+            </a>
+
+
+            <!-- User Manual -->
+
+            <a
+                href="usermanual.html"
+                class="nav-item"
+                id="userManualButton"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-circle-question"></i>
+                </span>
+
+                <span class="nav-label">
+                    User Manual
+                </span>
+
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+
+    <div class="content">
+
+
+        <!-- ======================================
+             TOP BAR
+             ====================================== -->
+
+        <header class="topbar">
+
+
+            <!-- College -->
+
+            <div class="college-title">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <span>
+                    TKM College of Engineering
+                </span>
 
             </div>
 
-        </div>
 
-        <div class="navbar-right">
+            <!-- Top actions -->
 
-            <button>
+            <div class="top-actions">
 
-                <i class="fa-regular fa-envelope"></i>
 
-            </button>
+                <!-- Student -->
 
-            <button>
-
-                <i class="fa-regular fa-bell"></i>
-
-            </button>
-
-            <button>
-
-                <i class="fa-solid fa-user"></i>
-
-            </button>
-
-            <button>
-
-                Logout
-
-            </button>
-
-        </div>
-
-    </header>
-
-    <!-- ===================== LAYOUT ===================== -->
-
-    <div class="layout">
-
-        <!-- ================= SIDEBAR ================= -->
-
-        <aside class="sidebar">
-
-            <ul>
-
-                <li>
-
-                    <i class="fa-solid fa-house"></i>
-
-                    <span>Dashboard</span>
-
-                </li>
-
-                <li>
-
-                    <i class="fa-solid fa-calendar-check"></i>
-
-                    <span>Attendance</span>
-
-                </li>
-
-                <li>
-
-                    <i class="fa-solid fa-book"></i>
-
-                    <span>Assignments</span>
-
-                </li>
-
-                <li>
-
-                    <i class="fa-solid fa-folder-open"></i>
-
-                    <span>Class Materials</span>
-
-                </li>
-
-                <li class="active">
-
-                    <i class="fa-solid fa-square-poll-vertical"></i>
-
-                    <span>Results</span>
-
-                </li>
-
-                <li>
-
-                    <i class="fa-solid fa-calendar-days"></i>
-
-                    <span>Timetable</span>
-
-                </li>
-
-                <li>
+                <div class="top-action username">
 
                     <i class="fa-solid fa-user"></i>
 
-                    <span>Profile</span>
+                    <span id="studentName">
+                        Student
+                    </span>
 
-                </li>
+                </div>
 
-            </ul>
 
-        </aside>
+                <!-- Messages -->
 
-        <!-- ================= CONTENT ================= -->
+                <a
+                    href="#"
+                    class="top-action"
+                >
 
-        <main class="main-content">
+                    <i class="fa-solid fa-envelope"></i>
 
-            <div class="breadcrumb">
-               
-                    <i class="fas fa-home"></i>
-                    Home
-               
-                <span class="breadcrumb-separator">></span>
-                <span class="breadcrumb-current">Results</span>
+                    <span>
+                        Messages
+                    </span>
+
+                    <span class="message-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <!-- Logout -->
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+
             </div>
+
+        </header>
+
+
+
+        <!-- ======================================
+             BREADCRUMB
+             ====================================== -->
+
+                <div class="breadcrumb">
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="current">Results</span>
+        </div>
 
             <section class="results-card">
 
@@ -268,8 +389,8 @@
             </section>
 
         </main>
-
     </div>
+</div>
 
     <script src="js/common.js"></script>
 
