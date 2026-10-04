@@ -593,213 +593,66 @@ function renderDashboard() {
                         <div class="widget-content p-0">
 
 
-                            <table class="calendar-table">
+                            <div class="calendar-wrapper">
 
-                                <thead>
+                                <div class="calendar-navigation">
 
-                                    <tr>
+                                    <button
+                                        type="button"
+                                        id="previousMonth"
+                                        class="calendar-nav-button"
+                                        aria-label="Previous month"
+                                    >
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
 
-                                        <th
-                                            colspan="7"
-                                            class="calendar-month"
-                                        >
-                                            August 2026
-                                        </th>
+                                    <button
+                                        type="button"
+                                        id="nextMonth"
+                                        class="calendar-nav-button"
+                                        aria-label="Next month"
+                                    >
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
 
-                                    </tr>
+                                </div>
 
+                                <table class="calendar-table">
 
-                                    <tr>
+                                    <thead>
 
-                                        <th>Sun</th>
+                                        <tr>
 
-                                        <th>Mon</th>
+                                            <th
+                                                colspan="7"
+                                                class="calendar-month"
+                                                id="calendarMonth"
+                                            >
+                                            </th>
 
-                                        <th>Tue</th>
+                                        </tr>
 
-                                        <th>Wed</th>
+                                        <tr>
 
-                                        <th>Thu</th>
+                                            <th>Sun</th>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
 
-                                        <th>Fri</th>
+                                        </tr>
 
-                                        <th>Sat</th>
+                                    </thead>
 
-                                    </tr>
+                                    <tbody id="calendarBody">
 
-                                </thead>
+                                    </tbody>
 
+                                </table>
 
-                                <tbody>
-
-
-                                    <tr>
-
-                                        <td class="text-muted">
-                                            26
-                                        </td>
-
-                                        <td class="text-muted">
-                                            27
-                                        </td>
-
-                                        <td class="text-muted">
-                                            28
-                                        </td>
-
-                                        <td class="text-muted">
-                                            29
-                                        </td>
-
-                                        <td class="text-muted">
-                                            30
-                                        </td>
-
-                                        <td class="text-muted">
-                                            31
-                                        </td>
-
-                                        <td>
-                                            1
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            2
-                                        </td>
-
-                                        <td>
-                                            3
-                                        </td>
-
-                                        <td>
-                                            4
-                                        </td>
-
-                                        <td class="today">
-                                            5
-                                        </td>
-
-                                        <td>
-                                            6
-                                        </td>
-
-                                        <td>
-                                            7
-                                        </td>
-
-                                        <td>
-                                            8
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            9
-                                        </td>
-
-                                        <td>
-                                            10
-                                        </td>
-
-                                        <td>
-                                            11
-                                        </td>
-
-                                        <td>
-                                            12
-                                        </td>
-
-                                        <td>
-                                            13
-                                        </td>
-
-                                        <td>
-                                            14
-                                        </td>
-
-                                        <td>
-                                            15
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            16
-                                        </td>
-
-                                        <td>
-                                            17
-                                        </td>
-
-                                        <td>
-                                            18
-                                        </td>
-
-                                        <td>
-                                            19
-                                        </td>
-
-                                        <td>
-                                            20
-                                        </td>
-
-                                        <td>
-                                            21
-                                        </td>
-
-                                        <td>
-                                            22
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            23
-                                        </td>
-
-                                        <td>
-                                            24
-                                        </td>
-
-                                        <td>
-                                            25
-                                        </td>
-
-                                        <td>
-                                            26
-                                        </td>
-
-                                        <td>
-                                            27
-                                        </td>
-
-                                        <td>
-                                            28
-                                        </td>
-
-                                        <td>
-                                            29
-                                        </td>
-
-                                    </tr>
-
-                                </tbody>
-
-                            </table>
+                            </div>
 
                         </div>
 
@@ -1373,6 +1226,271 @@ function bindEvents() {
 
 
 /* ==================================================
+   LIVE CALENDAR
+   ================================================== */
+
+function initializeCalendar() {
+
+    const calendarBody =
+        document.getElementById("calendarBody");
+
+    const calendarMonth =
+        document.getElementById("calendarMonth");
+
+    const previousMonthButton =
+        document.getElementById("previousMonth");
+
+    const nextMonthButton =
+        document.getElementById("nextMonth");
+
+
+    if (
+        !calendarBody ||
+        !calendarMonth ||
+        !previousMonthButton ||
+        !nextMonthButton
+    ) {
+        return;
+    }
+
+
+    let currentDate = new Date();
+
+    let currentMonth =
+        currentDate.getMonth();
+
+    let currentYear =
+        currentDate.getFullYear();
+
+
+    function renderCalendar() {
+
+        calendarBody.innerHTML = "";
+
+
+        const firstDay =
+            new Date(
+                currentYear,
+                currentMonth,
+                1
+            ).getDay();
+
+
+        const daysInCurrentMonth =
+            new Date(
+                currentYear,
+                currentMonth + 1,
+                0
+            ).getDate();
+
+
+        const daysInPreviousMonth =
+            new Date(
+                currentYear,
+                currentMonth,
+                0
+            ).getDate();
+
+
+        const monthName =
+            new Date(
+                currentYear,
+                currentMonth,
+                1
+            ).toLocaleString(
+                "default",
+                {
+                    month: "long"
+                }
+            );
+
+
+        calendarMonth.textContent =
+            `${monthName} ${currentYear}`;
+
+
+        const today =
+            new Date();
+
+
+        let dayCounter = 1;
+
+        let nextMonthDay = 1;
+
+
+        /*
+         * Calculate how many cells are required.
+         * A calendar can occupy either 5 or 6 rows.
+         */
+
+        const totalCells =
+            Math.ceil(
+                (
+                    firstDay +
+                    daysInCurrentMonth
+                ) / 7
+            ) * 7;
+
+
+        for (
+            let cell = 0;
+            cell < totalCells;
+            cell++
+        ) {
+
+            if (cell % 7 === 0) {
+
+                var row =
+                    document.createElement("tr");
+
+                calendarBody.appendChild(row);
+
+            }
+
+
+            const cellElement =
+                document.createElement("td");
+
+
+            /*
+             * Previous month's dates
+             */
+
+            if (cell < firstDay) {
+
+                const previousDay =
+                    daysInPreviousMonth -
+                    firstDay +
+                    cell +
+                    1;
+
+
+                cellElement.textContent =
+                    previousDay;
+
+
+                cellElement.classList.add(
+                    "text-muted"
+                );
+
+            }
+
+
+            /*
+             * Current month's dates
+             */
+
+            else if (
+                dayCounter <=
+                daysInCurrentMonth
+            ) {
+
+                cellElement.textContent =
+                    dayCounter;
+
+
+                /*
+                 * Highlight today's date
+                 */
+
+                if (
+                    dayCounter === today.getDate() &&
+                    currentMonth === today.getMonth() &&
+                    currentYear === today.getFullYear()
+                ) {
+
+                    cellElement.classList.add(
+                        "today"
+                    );
+
+                }
+
+
+                dayCounter++;
+
+            }
+
+
+            /*
+             * Next month's dates
+             */
+
+            else {
+
+                cellElement.textContent =
+                    nextMonthDay;
+
+
+                cellElement.classList.add(
+                    "text-muted"
+                );
+
+
+                nextMonthDay++;
+
+            }
+
+
+            row.appendChild(cellElement);
+
+        }
+
+    }
+
+
+    /*
+     * Previous month
+     */
+
+    previousMonthButton.addEventListener(
+        "click",
+        () => {
+
+            currentMonth--;
+
+            if (currentMonth < 0) {
+
+                currentMonth = 11;
+                currentYear--;
+
+            }
+
+            renderCalendar();
+
+        }
+    );
+
+
+    /*
+     * Next month
+     */
+
+    nextMonthButton.addEventListener(
+        "click",
+        () => {
+
+            currentMonth++;
+
+            if (currentMonth > 11) {
+
+                currentMonth = 0;
+                currentYear++;
+
+            }
+
+            renderCalendar();
+
+        }
+    );
+
+
+    renderCalendar();
+
+}
+
+
+
+/* ==================================================
    INITIALIZE DASHBOARD
    ================================================== */
 
@@ -1381,6 +1499,8 @@ document.addEventListener(
     () => {
 
         renderDashboard();
+
+        initializeCalendar();
 
     }
 );
