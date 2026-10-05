@@ -27,14 +27,12 @@ const courseOfferingSchema = new mongoose.Schema(
 
         section: {
             type: String,
-            required: true
+            default: "A"
         }
+    },
+    {
+        timestamps: true
     }
 );
 
-const CourseOffering = mongoose.model(
-    "CourseOffering",
-    courseOfferingSchema
-);
-
-module.exports = CourseOffering;
+module.exports = mongoose.model("CourseOffering", courseOfferingSchema);
